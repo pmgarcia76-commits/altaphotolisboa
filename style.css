@@ -1,41 +1,57 @@
+/* RESET LIMPO */
 body {
   margin: 0;
+  background: #f2f2f2;
   font-family: Helvetica, Arial, sans-serif;
-  background: #f3f3f3;
+  color: #000;
 }
 
+/* CONTAINER EDITORIAL (alinhado à face) */
 .home {
   max-width: 1200px;
   margin: 120px auto;
   padding: 0 40px;
 }
 
-.main {
-  font-size: 90px;
-  font-weight: 700;
+/* CADA LINHA PRINCIPAL */
+.line {
+  margin: 0 0 48px 0; /* espaço consistente entre as 3 linhas */
+  font-size: 96px;
+  font-weight: 800;
   letter-spacing: -2px;
-  margin: 0 0 40px 0;
+  line-height: 0.95;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+/* GALLERY (palavra principal) */
+.main-word {
+  display: inline-block;
 }
 
-a:hover {
-  opacity: 0.6;
+/* "shop" mais pequeno, na mesma linha e à frente */
+.sub-word {
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 18px;
+  vertical-align: baseline;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
 }
 
-/* Mobile */
+/* MOBILE — mantém proporção sem destruir layout */
 @media (max-width: 768px) {
-
   .home {
-    margin: 60px auto;
-    padding: 0 20px;
+    margin: 80px auto;
+    padding: 0 24px;
   }
 
-  .main {
-    font-size: 48px;
+  .line {
+    font-size: 54px;
+    margin-bottom: 42px; /* mesmo ritmo entre todas as linhas */
+  }
+
+  .sub-word {
+    font-size: 18px;
+    margin-left: 10px;
   }
 }
 
