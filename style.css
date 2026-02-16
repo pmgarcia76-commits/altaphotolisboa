@@ -1,57 +1,57 @@
-/* RESET LIMPO */
-body {
-  margin: 0;
-  background: #f2f2f2;
+/* ===== RESET ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body{
   font-family: Helvetica, Arial, sans-serif;
+  background: #f3f3f3;
   color: #000;
 }
 
-/* CONTAINER EDITORIAL (alinhado à face) */
-.home {
+/* ===== LAYOUT ===== */
+.home{
   max-width: 1200px;
   margin: 120px auto;
   padding: 0 40px;
 }
 
-/* CADA LINHA PRINCIPAL */
-.line {
-  margin: 0 0 48px 0; /* espaço consistente entre as 3 linhas */
-  font-size: 96px;
+/* ===== TYPO (TAMANHO ORIGINAL GIGANTE) ===== */
+.line{
+  font-size: 110px;      /* <<< grande como no teu original */
   font-weight: 800;
   letter-spacing: -2px;
   line-height: 0.95;
+  margin: 0 0 70px 0;    /* <<< mesmo espaço nas 3 linhas */
 }
 
-/* GALLERY (palavra principal) */
-.main-word {
-  display: inline-block;
-}
+/* GALLERY */
+.word{ display: inline-block; }
 
-/* "shop" mais pequeno, na mesma linha e à frente */
-.sub-word {
+/* "shop" pequeno à frente */
+.shop{
   font-size: 28px;
   font-weight: 500;
   margin-left: 18px;
-  vertical-align: baseline;
   letter-spacing: 0.02em;
   text-transform: lowercase;
+  vertical-align: baseline;
 }
 
-/* MOBILE — mantém proporção sem destruir layout */
-@media (max-width: 768px) {
-  .home {
-    margin: 80px auto;
-    padding: 0 24px;
+/* ===== MOBILE ===== */
+@media (max-width: 768px){
+  .home{
+    margin: 70px auto;
+    padding: 0 22px;
   }
 
-  .line {
-    font-size: 54px;
-    margin-bottom: 42px; /* mesmo ritmo entre todas as linhas */
+  .line{
+    font-size: 64px;     /* grande e limpo em mobile */
+    margin-bottom: 54px; /* igual em todas as linhas */
   }
 
-  .sub-word {
+  .shop{
     font-size: 18px;
     margin-left: 10px;
   }
 }
+
 
