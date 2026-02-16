@@ -1,52 +1,113 @@
-body {
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
   font-family: Helvetica, Arial, sans-serif;
-  background: #f3f3f3;
 }
 
-.home {
-  max-width: 1200px;
-  margin: 120px auto;
-  padding: 0 40px;
+/* ========================= */
+/* CONTAINER (MARGENS BRANCAS) */
+/* ========================= */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 60px 120px 60px;
 }
 
-.main {
-  font-size: 90px;
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin: 0 0 40px 0;
+/* ========================= */
+/* HERO TYPOGRAPHY (IGUAL AO ORIGINAL) */
+/* ========================= */
+
+.hero {
+  margin-bottom: 60px;
 }
 
-.small {
-  font-size: 28px;
-  font-weight: 400;
-  margin-left: 10px;
+.title {
+  font-size: 72px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+.subtitle {
+  margin-top: 18px;
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #7a7a7a;
 }
 
-a:hover {
-  opacity: 0.6;
+/* ========================= */
+/* IMAGES (NÃO FULL WIDTH / NÃO BANNER) */
+/* ========================= */
+
+.image-block {
+  margin-bottom: 60px;
 }
 
-/* Mobile */
+.image-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================= */
+/* TEXT BETWEEN IMAGES (ALINHADO À FACE) */
+/* ========================= */
+
+.text-block {
+  max-width: 620px;
+  margin-bottom: 60px;
+}
+
+.text-block p {
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+/* ========================= */
+/* MOBILE (MANTÉM DESIGN EDITORIAL) */
+/* ========================= */
 
 @media (max-width: 768px) {
-
-  .home {
-    margin: 60px auto;
-    padding: 0 20px;
+  .container {
+    padding: 40px 20px 80px 20px;
   }
 
-  .main {
-    font-size: 48px;
+  .title {
+    font-size: 42px;
+    line-height: 1.05;
   }
 
-  .small {
-    font-size: 18px;
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 0.25em;
   }
 
+  .text-block {
+    max-width: 100%;
+  }
+
+  .text-block p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .image-block {
+    margin-bottom: 40px;
+  }
 }
+
