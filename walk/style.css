@@ -1,25 +1,30 @@
-/* ========================================= */
-/* WALK PAGE — COMPLETE ISOLATED CSS */
-/* Colocar em: /walk/style.css */
-/* ========================================= */
+/* ===================================== */
+/* WALK CSS COMPLETO — ISOLADO */
+/* NÃO ALTERA A HOMEPAGE */
+/* NÃO ALTERA FONTES DO SITE */
+/* ===================================== */
 
-/* RESET SUAVE (sem destruir o resto do site) */
-html, body {
+/* RESET LIMPO */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
   background: #ffffff;
   color: #000000;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* CONTAINER EDITORIAL — MARGENS BRANCAS COMO NO ORIGINAL */
+/* CONTAINER EDITORIAL (MARGENS BRANCAS COMO NA TUA REFERÊNCIA) */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 70px 60px 120px 60px;
 }
 
-/* HERO (TÍTULO GRANDE EM CAPS) */
+/* HERO — TIPOGRAFIA GRANDE EM CAPS (COMO ORIGINAL) */
 .hero {
   margin-bottom: 60px;
 }
@@ -30,7 +35,6 @@ html, body {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.95;
-  margin: 0;
 }
 
 .subtitle {
@@ -41,7 +45,7 @@ html, body {
   color: #7a7a7a;
 }
 
-/* BLOCO DE IMAGENS — COLUNA (NÃO FULL WIDTH BANNER) */
+/* IMAGENS — COLUNA EDITORIAL (NÃO FULL WIDTH GIGANTE) */
 .image-block {
   margin-bottom: 60px;
 }
@@ -50,6 +54,7 @@ html, body {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 100%;
 }
 
 /* TEXTO ENTRE FOTOS — ALINHADO À FACE ESQUERDA */
@@ -59,20 +64,14 @@ html, body {
 }
 
 .text-block p {
-  margin: 0;
   font-size: 18px;
   line-height: 1.7;
   letter-spacing: 0.01em;
   text-align: left;
+  margin: 0;
 }
 
-/* GARANTE QUE IMAGENS NÃO FICAM GIGANTES */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* MOBILE — MESMO LOOK EDITORIAL */
+/* MOBILE — MESMO DESIGN EDITORIAL, SEM QUEBRAS */
 @media (max-width: 768px) {
 
   .container {
@@ -103,3 +102,4 @@ img {
     line-height: 1.75;
   }
 }
+
