@@ -1,105 +1,82 @@
-/* ===================================== */
-/* WALK CSS COMPLETO — ISOLADO */
-/* NÃO ALTERA A HOMEPAGE */
-/* NÃO ALTERA FONTES DO SITE */
-/* ===================================== */
+/* ==================================================
+   WALK — CSS ISOLADO (SEM CONFLITOS)
+   Objetivo: igual ao layout da tua referência
+   - margens brancas
+   - texto à face (flush-left)
+   - tipografia pesada em caps
+   - mobile NÃO desformatar
+   ================================================== */
 
-/* RESET LIMPO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
-  background: #ffffff;
-  color: #000000;
-  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #000;
+  /* tenta parecer com o teu “look” original */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* CONTAINER EDITORIAL (MARGENS BRANCAS COMO NA TUA REFERÊNCIA) */
-.container {
-  max-width: 1100px;
+/* coluna editorial */
+.wrap{
+  max-width: 1120px;
   margin: 0 auto;
   padding: 70px 60px 120px 60px;
 }
 
-/* HERO — TIPOGRAFIA GRANDE EM CAPS (COMO ORIGINAL) */
-.hero {
-  margin-bottom: 60px;
-}
+/* título + subtítulo */
+.hero{ margin: 0 0 60px 0; }
 
-.title {
-  font-size: 72px;
+/* isto resolve o iPhone (escala automática sem rebentar) */
+.title{
+  margin: 0;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.95;
+  font-size: clamp(42px, 7.2vw, 72px);
 }
 
-.subtitle {
-  margin-top: 18px;
-  font-size: 14px;
-  letter-spacing: 0.35em;
+/* subtítulo com tracking como na imagem */
+.subtitle{
+  margin: 18px 0 0 0;
   text-transform: uppercase;
+  letter-spacing: 0.35em;
   color: #7a7a7a;
+  font-size: clamp(12px, 1.3vw, 14px);
 }
 
-/* IMAGENS — COLUNA EDITORIAL (NÃO FULL WIDTH GIGANTE) */
-.image-block {
-  margin-bottom: 60px;
-}
-
-.image-block img {
+/* imagens na coluna (nunca banner full-screen) */
+.image{ margin: 0 0 60px 0; }
+.image img{
   width: 100%;
   height: auto;
   display: block;
-  max-width: 100%;
 }
 
-/* TEXTO ENTRE FOTOS — ALINHADO À FACE ESQUERDA */
-.text-block {
-  max-width: 620px;
-  margin-bottom: 60px;
+/* texto entre fotos — alinhado à face esquerda das imagens */
+.copy{
+  max-width: 640px;
+  margin: 0 0 60px 0;
 }
 
-.text-block p {
+.copy p{
+  margin: 0;
   font-size: 18px;
   line-height: 1.7;
   letter-spacing: 0.01em;
-  text-align: left;
-  margin: 0;
 }
 
-/* MOBILE — MESMO DESIGN EDITORIAL, SEM QUEBRAS */
-@media (max-width: 768px) {
-
-  .container {
-    padding: 40px 20px 80px 20px;
-  }
-
-  .title {
-    font-size: 42px;
-    line-height: 1.05;
-  }
-
-  .subtitle {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-  }
-
-  .image-block {
-    margin-bottom: 40px;
-  }
-
-  .text-block {
-    max-width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .text-block p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
+/* mobile: só reduz padding e espaçamentos, sem destruir layout */
+@media (max-width: 768px){
+  .wrap{ padding: 48px 22px 90px 22px; }
+  .image, .copy{ margin-bottom: 44px; }
+  .copy{ max-width: 100%; }
+  .copy p{ font-size: 16px; line-height: 1.75; }
 }
 
+@media (max-width: 380px){
+  .wrap{ padding: 44px 18px 80px 18px; }
+  .subtitle{ letter-spacing: 0.28em; }
+}
