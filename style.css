@@ -1,6 +1,6 @@
-/* ========================= */
-/* RESET */
-/* ========================= */
+/* ===================================== */
+/* RESET BASE (NÃO MUDA A TUA ESTÉTICA) */
+/* ===================================== */
 
 * {
   margin: 0;
@@ -8,25 +8,31 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   background: #ffffff;
   color: #000000;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-/* ========================= */
-/* CONTAINER (MARGENS BRANCAS) */
-/* ========================= */
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 70px 60px 120px 60px;
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* ========================= */
-/* HERO TYPOGRAPHY (IGUAL AO ORIGINAL) */
-/* ========================= */
+/* ===================================== */
+/* CONTAINER EDITORIAL (MARGENS BRANCAS) */
+/* ===================================== */
+
+.container {
+  max-width: 1120px;       /* largura editorial igual ao teu layout */
+  margin: 0 auto;          /* centra a coluna */
+  padding: 70px 60px 120px 60px; /* margens brancas laterais */
+}
+
+/* ===================================== */
+/* HERO / TÍTULOS (COMO NO ORIGINAL) */
+/* ===================================== */
 
 .hero {
   margin-bottom: 60px;
@@ -35,79 +41,6 @@ body {
 .title {
   font-size: 72px;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-}
-
-.subtitle {
-  margin-top: 18px;
-  font-size: 14px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #7a7a7a;
-}
-
-/* ========================= */
-/* IMAGES (NÃO FULL WIDTH / NÃO BANNER) */
-/* ========================= */
-
-.image-block {
-  margin-bottom: 60px;
-}
-
-.image-block img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ========================= */
-/* TEXT BETWEEN IMAGES (ALINHADO À FACE) */
-/* ========================= */
-
-.text-block {
-  max-width: 620px;
-  margin-bottom: 60px;
-}
-
-.text-block p {
-  font-size: 18px;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-
-/* ========================= */
-/* MOBILE (MANTÉM DESIGN EDITORIAL) */
-/* ========================= */
-
-@media (max-width: 768px) {
-  .container {
-    padding: 40px 20px 80px 20px;
-  }
-
-  .title {
-    font-size: 42px;
-    line-height: 1.05;
-  }
-
-  .subtitle {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-  }
-
-  .text-block {
-    max-width: 100%;
-  }
-
-  .text-block p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .image-block {
-    margin-bottom: 40px;
-  }
-}
+  text-transform: uppercase;      /* CAPS obrigatório */
+  letter-spa
 
