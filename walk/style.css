@@ -1,8 +1,10 @@
-/* ============================= */
-/* WALK PAGE — STRICT EDITORIAL  */
-/* ============================= */
+/* ========================================= */
+/* WALK PAGE — COMPLETE ISOLATED CSS */
+/* Colocar em: /walk/style.css */
+/* ========================================= */
 
-.walk-page {
+/* RESET SUAVE (sem destruir o resto do site) */
+html, body {
   margin: 0;
   padding: 0;
   background: #ffffff;
@@ -10,52 +12,53 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.walk-container {
-  max-width: 1200px;
+/* CONTAINER EDITORIAL — MARGENS BRANCAS COMO NO ORIGINAL */
+.container {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 60px 120px 60px;
+  padding: 70px 60px 120px 60px;
 }
 
-/* HEADER */
-.walk-header {
-  margin-bottom: 70px;
+/* HERO (TÍTULO GRANDE EM CAPS) */
+.hero {
+  margin-bottom: 60px;
 }
 
-.walk-title {
+.title {
   font-size: 72px;
-  font-weight: 700;
+  font-weight: 800;
+  text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 0.95;
   margin: 0;
 }
 
-.walk-subtitle {
-  margin-top: 20px;
+.subtitle {
+  margin-top: 18px;
   font-size: 14px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: #7a7a7a;
 }
 
-/* IMAGE BLOCKS */
-.walk-image-block {
-  width: 100%;
-  margin: 0 0 70px 0;
+/* BLOCO DE IMAGENS — COLUNA (NÃO FULL WIDTH BANNER) */
+.image-block {
+  margin-bottom: 60px;
 }
 
-.walk-image-block img {
+.image-block img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* TEXT BETWEEN IMAGES — PERFECT LEFT ALIGNMENT */
-.walk-text-block {
-  max-width: 560px;
-  margin: 0 0 70px 0;
+/* TEXTO ENTRE FOTOS — ALINHADO À FACE ESQUERDA */
+.text-block {
+  max-width: 620px;
+  margin-bottom: 60px;
 }
 
-.walk-text-block p {
+.text-block p {
   margin: 0;
   font-size: 18px;
   line-height: 1.7;
@@ -63,33 +66,40 @@
   text-align: left;
 }
 
-/* MOBILE — SAME GRID, SAME ALIGNMENT */
+/* GARANTE QUE IMAGENS NÃO FICAM GIGANTES */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* MOBILE — MESMO LOOK EDITORIAL */
 @media (max-width: 768px) {
 
-  .walk-container {
-    padding: 50px 24px 80px 24px;
+  .container {
+    padding: 40px 20px 80px 20px;
   }
 
-  .walk-title {
+  .title {
     font-size: 42px;
     line-height: 1.05;
   }
 
-  .walk-subtitle {
+  .subtitle {
     font-size: 12px;
     letter-spacing: 0.25em;
   }
 
-  .walk-text-block {
-    max-width: 100%;
+  .image-block {
+    margin-bottom: 40px;
   }
 
-  .walk-text-block p {
+  .text-block {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .text-block p {
     font-size: 16px;
     line-height: 1.75;
-  }
-
-  .walk-image-block {
-    margin-bottom: 50px;
   }
 }
