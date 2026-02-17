@@ -95,6 +95,17 @@ a, a:visited{
   align-items:flex-start;
   gap: 0;
 }
+/* SHOP mais perto da GALLERY e alinhado em baixo (sem afetar walk tour) */
+.sub--shop{
+  margin-left: 4px;          /* mais junto de GALLERY */
+  transform: translateY(0.22em); /* desce o "shop" para alinhar o S com o Y */
+}
+
+/* garante alinhamento inferior entre GALLERY e shop */
+.line{
+  display: inline-flex;
+  align-items: flex-end;
+}
 
 
 
