@@ -17,10 +17,7 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    a, a:visited {
-      color: inherit;
-      text-decoration: none;
-    }
+    a, a:visited { color: inherit; text-decoration: none; }
 
     .home{
       min-height:100vh;
@@ -34,7 +31,6 @@
       align-items:flex-start;
     }
 
-    /* Títulos principais (GALLERY, PHOTO SERIES, STREET PHOTO) */
     .title{
       font-weight:800;
       letter-spacing:-0.02em;
@@ -43,26 +39,27 @@
       display:inline-block;
     }
 
-    /* Linha com texto principal + subtítulo (shop / walk tour) */
+    /* Linha: controla layout; SEM gap (para não enganar o olho) */
     .galleryline{
       display:inline-flex;
       align-items:baseline;
       justify-content:flex-start;
-      gap: 6px; /* MESMO espaço para shop e walk tour (desktop) */
+      gap: 0;                 /* <-- FIX DEFINITIVO */
       width: max-content;
       white-space: nowrap;
     }
 
-    /* Subtexto (shop e walk tour) */
-.shop{
-  font-weight:900;
-  letter-spacing:-0.03em; /* reduz largura visual da palavra longa */
-  line-height:1;
-  font-size: clamp(40px, 4.6vw, 74px);
-  transform: translateY(-0.11em); /* melhor alinhamento ótico */
-  white-space: nowrap;
-}
-
+    /* Subtexto (shop / walk tour): espaçamento óptico FIXO */
+    .shop{
+      font-weight:900;
+      letter-spacing:-0.04em;         /* aperta palavras longas */
+      line-height:1;
+      font-size: clamp(40px, 4.6vw, 74px);
+      margin-left: 8px;              /* <-- ESPAÇO IGUAL “AO OLHO” */
+      transform: translateY(-0.10em);
+      white-space: nowrap;
+      display:inline-block;
+    }
 
     @media (max-width: 600px){
       .home{ padding: 34px 22px; }
@@ -72,14 +69,10 @@
         font-size: clamp(54px, 14vw, 92px);
       }
 
-      /* IGUAL ao desktop → elimina diferenças de espaçamento */
-      .galleryline{
-        gap: 6px;
-      }
-
       .shop{
         font-size: clamp(30px, 7.2vw, 48px);
-        transform: translateY(-0.07em);
+        margin-left: 7px;            /* mantém igual no mobile */
+        transform: translateY(-0.08em);
       }
     }
   </style>
@@ -107,3 +100,4 @@
   </main>
 </body>
 </html>
+
