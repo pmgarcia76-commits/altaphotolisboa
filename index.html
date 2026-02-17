@@ -54,14 +54,15 @@
     }
 
     /* Subtexto (shop e walk tour) */
-    .shop{
-      font-weight:900;
-      letter-spacing:-0.01em;
-      line-height:1;
-      font-size: clamp(40px, 4.6vw, 74px); /* tamanho intermédio */
-      transform: translateY(-0.09em);
-      white-space: nowrap;
-    }
+.shop{
+  font-weight:900;
+  letter-spacing:-0.03em; /* reduz largura visual da palavra longa */
+  line-height:1;
+  font-size: clamp(40px, 4.6vw, 74px);
+  transform: translateY(-0.11em); /* melhor alinhamento ótico */
+  white-space: nowrap;
+}
+
 
     @media (max-width: 600px){
       .home{ padding: 34px 22px; }
