@@ -38,12 +38,20 @@ a, a:visited{
   font-size: clamp(62px, 8.4vw, 140px);
 }
 
-/* ✅ Ajuste pedido: shop junto e com o MESMO “espaço editorial” sempre */
+/* ✅ FIX DEFINITIVO:
+   - força GALLERY a NÃO ser bloco (para não criar “empurrão” visual)
+   - gap pequeno e estável (não cresce demais no desktop)
+*/
 .home-item--gallery{
   display:inline-flex;
   align-items: baseline;
-  gap: clamp(14px, 2.4vw, 34px);
+  gap: clamp(10px, 1.2vw, 16px); /* <-- MAIS JUNTO (desktop e mobile) */
   white-space: nowrap;
+}
+
+.home-item--gallery .home-title{
+  display: inline-block;   /* <-- CRÍTICO */
+  flex: 0 0 auto;
 }
 
 .home-sub{
@@ -71,4 +79,10 @@ a, a:visited{
   .home-sub{
     font-size: clamp(18px, 5vw, 24px);
   }
+
+  /* mantém o shop junto também no mobile */
+  .home-item--gallery{
+    gap: 12px;
+  }
 }
+
