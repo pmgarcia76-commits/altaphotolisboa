@@ -39,7 +39,7 @@ a, a:visited{
   letter-spacing:-0.02em;
   line-height:0.9;
   font-size: clamp(62px, 8.4vw, 140px);
-  display:block; /* importante para stacks ficarem “editorial” */
+  display:block;
 }
 
 .sub{
@@ -49,10 +49,10 @@ a, a:visited{
   font-size: clamp(40px, 4.6vw, 74px);
   white-space:nowrap;
   display:inline-block;
-  transform: translateY(-0.10em); /* alinhamento óptico para inline (walk tour) */
+  transform: translateY(-0.10em);
 }
 
-/* ========== 1) STACK (GALLERY/shop e PHOTO/SERIES) ========== */
+/* ========== STACK (GALLERY/shop e PHOTO/SERIES) ========== */
 .stack{
   display:flex;
   flex-direction:column;
@@ -60,47 +60,14 @@ a, a:visited{
   gap: 0;
 }
 
-/* shop por baixo: não queremos a subida óptica aqui */
+/* quando o sub está por baixo, não queremos a subida óptica */
 .sub--stack{
   transform:none;
 }
 
-/* ========== 3) STREET BLOCK ========== */
-/* STREET em cima + PHOTO por baixo + walk tour por baixo (com espaçamento como os outros) */
+/* ========== STREET (3 linhas com espaçamento IGUAL aos outros) ========== */
 .street{
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  gap: 0; /* remove o espaço grande entre linhas */
-}
-
-/* dá só um “respiro” pequeno antes do walk tour (como o shop abaixo de GALLERY) */
-.street .sub{
-  margin-top: clamp(6px, 0.9vw, 10px);
-}
-
-
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 600px){
-  
-}
-
-
-  .title{
-    font-size: clamp(54px, 14vw, 92px);
-  }
-
-  .sub{
-    font-size: clamp(30px, 7.2vw, 48px);
-    transform: translateY(-0.08em);
-  }
-
-  .street{ gap: 16px; }
-  .photoRow{ gap: 7px; }
-
-  /* shop por baixo continua sem subida */
-  .sub--stack{ transform:none; }
-}
-
+  align-items:flex
 
