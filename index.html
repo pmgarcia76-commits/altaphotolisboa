@@ -1,36 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alta Photo Lisboa</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alta Photo Lisboa</title>
 
-<style>
-/* RESET ABSOLUTO (remove azul, sublinhado, estilos default) */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:#f3f3f3;
+      color:#000;
+      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-html, body {
-  height: 100%;
-  background: #f3f3f3;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #000;
-  -webkit-font-smoothing: antialiased;
-}
+    /* Nunca azul, nunca sublinhado */
+    a, a:visited{color:#000; text-decoration:none}
 
-/* remove estilo azul dos links */
-a {
-  text-decoration: none;
-  color: #000;
-}
+    /* Layout */
+    .wrap{
+      min-height:100vh;
+      padding: clamp(28px, 6vw, 72px);
+    }
 
-/* LAYOUT PRINCIPAL */
-.container {
-  min-height: 100vh;
-  padding: 6vw;
-  display: flex;
-  align-items
+    .menu{
+      display:flex;
+      flex-direction:column;
+      gap: clamp(34px, 5.8vw, 74px);
+    }
+
+    /* Cada linha */
+    .item{display:block; width:fit-content}
+
+    /* Tipografia grande (como pediste) */
+    .title{
+      font-weight:800;
+      letter-spacing:-0.02em;
+      line-height:0.9;
+      font-size: clamp(62px, 8.4vw, 140px);
+    }
+
+    /* GALLERY + shop na mesma linha, com espaço consistente */
+    .gallery{
+      display:inline-flex;
+      align-items:baseline;
+      gap: clamp(14px, 2.4vw, 34px);
+      white-space:nowrap;
+    }
+
+    .shop{
+      font-weight:500;
+      letter-spacing:-0.01em;
+      line-height:1;
+      font-size: clamp(18px, 2.2vw, 34px);
+      transform: translateY(-0.06em);
+      white-space:nowrap;
+    }
+
+    /* Mobile: mantém o mesmo visual, só ajusta escala */
+    @media (max-width: 600px){
+      .wrap{padding: 34px 22px}
+      .menu{gap: 54px}
+      .title{font-size: clamp(54px, 14vw, 92px)}
+      .shop{font-size: clamp(18px, 5vw, 24px)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav class="menu" aria-label="Homepage">
+
+      <a class="item gallery" href="#">
+        <span class="title">GALLERY</span>
+        <span class="shop">shop</span>
+      </a>
+
+      <a class="item" href="#">
+        <span class="title">PHOTO SERIES</span>
+      </a>
+
+      <a class="item" href="streetsessions/">
+        <span class="title">STREET SESSIONS</span>
+      </a>
+
+    </nav>
+  </div>
+</body>
+</html>
 
