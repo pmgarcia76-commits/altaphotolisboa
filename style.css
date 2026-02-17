@@ -1,77 +1,86 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+/* ========== BASE ========== */
+*{ box-sizing:border-box; margin:0; padding:0; }
+html, body{ height:100%; }
 
 body{
   background:#f3f3f3;
   color:#000;
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
 a, a:visited{
-  color: inherit;
-  text-decoration: none;
+  color:inherit;
+  text-decoration:none;
 }
 
+/* ========== LAYOUT ========== */
 .home{
   min-height:100vh;
   padding: clamp(28px, 6vw, 72px);
 }
 
-/* Coluna principal */
 .nav{
   display:flex;
   flex-direction:column;
-  gap: clamp(40px, 6vw, 80px);
   align-items:flex-start;
+  gap: clamp(40px, 6vw, 80px);
 }
 
-/* Tipografia grande (GALLERY / PHOTO SERIES / STREET / PHOTO) */
+.block{
+  display:block;
+  width:fit-content;
+}
+
+/* ========== TYPE ========== */
 .title{
   font-weight:800;
   letter-spacing:-0.02em;
   line-height:0.9;
   font-size: clamp(62px, 8.4vw, 140px);
-  display:inline-block;
+  display:block; /* importante para stacks ficarem “editorial” */
 }
 
-/* Tipografia intermédia (shop / walk tour) */
 .sub{
   font-weight:900;
   letter-spacing:-0.04em;
   line-height:1;
   font-size: clamp(40px, 4.6vw, 74px);
-  white-space: nowrap;
-  transform: translateY(-0.10em);
+  white-space:nowrap;
   display:inline-block;
+  transform: translateY(-0.10em); /* alinhamento óptico para inline (walk tour) */
 }
 
-/* Linha em 1 row (GALLERY + shop) */
-.line{
-  display:inline-flex;
-  align-items:baseline;
-  gap: 8px;
-  white-space: nowrap;
+/* ========== 1) STACK (GALLERY/shop e PHOTO/SERIES) ========== */
+.stack{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap: 0;
 }
 
-/* STREET em cima + (PHOTO + walk tour) por baixo */
+/* shop por baixo: não queremos a subida óptica aqui */
+.sub--stack{
+  transform:none;
+}
+
+/* ========== 3) STREET BLOCK ========== */
 .street{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  gap: 18px; /* espaço vertical entre STREET e a linha de baixo */
+  gap: 18px; /* espaço entre STREET e a linha PHOTO + walk tour */
 }
 
-/* Linha de baixo: PHOTO + walk tour */
 .photoRow{
   display:inline-flex;
   align-items:baseline;
   gap: 8px;
-  white-space: nowrap;
+  white-space:nowrap;
 }
 
-/* Responsivo */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 600px){
   .home{ padding: 34px 22px; }
   .nav{ gap: 56px; }
@@ -85,26 +94,11 @@ a, a:visited{
     transform: translateY(-0.08em);
   }
 
-  .line{ gap: 7px; }
   .street{ gap: 16px; }
   .photoRow{ gap: 7px; }
-}
-.stack{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap: 0;
-}
-/* SHOP mais perto da GALLERY e alinhado em baixo (sem afetar walk tour) */
-.sub--shop{
-  margin-left: 4px;          /* mais junto de GALLERY */
-  transform: translateY(0.22em); /* desce o "shop" para alinhar o S com o Y */
-}
 
-/* garante alinhamento inferior entre GALLERY e shop */
-.line{
-  display: inline-flex;
-  align-items: flex-end;
+  /* shop por baixo continua sem subida */
+  .sub--stack{ transform:none; }
 }
 
 
