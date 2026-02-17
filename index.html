@@ -5,25 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alta Photo Lisboa</title>
   <meta name="description" content="Alta Photo Lisboa — Gallery, Photo Series, Street Sessions." />
-  <link rel="stylesheet" href="/style.css" />
+
+  <!-- CSS CRÍTICO (backup) para nunca veres a página azul mesmo que o ficheiro falhe -->
+  <style>
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:#f3f3f3;color:#000;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    a{color:inherit;text-decoration:none}
+  </style>
+
+  <!-- IMPORTANTE: caminho RELATIVO (não /style.css) -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main class="home">
     <nav class="home-nav" aria-label="Main">
-      <!-- 1) GALLERY shop (mesma linha, espaçamento controlado, sem empurrar para a direita) -->
       <a class="home-link home-link--gallery" href="#gallery">
         <span class="home-link__main">GALLERY</span>
         <span class="home-link__sub">shop</span>
       </a>
 
-      <!-- 2) PHOTO SERIES -->
       <a class="home-link" href="#photoseries">
         <span class="home-link__main">PHOTO SERIES</span>
       </a>
 
-      <!-- 3) STREET SESSIONS -->
-      <a class="home-link" href="/streetsessions/">
+      <a class="home-link" href="streetsessions/">
         <span class="home-link__main">STREET SESSIONS</span>
       </a>
     </nav>
