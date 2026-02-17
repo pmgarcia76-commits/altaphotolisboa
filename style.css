@@ -1,63 +1,74 @@
-<!doctype html>
-<html lang="pt">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alta Photo Lisboa</title>
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 
-  <!-- FALLBACK CRÍTICO: garante que nunca ficas com links azuis / layout default -->
-  <style>
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:#f3f3f3;
-      color:#000;
-      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    a,a:visited{color:inherit;text-decoration:none}
-    .home{min-height:100vh;padding:clamp(28px,6vw,72px)}
-    .home-nav{display:flex;flex-direction:column;gap:clamp(34px,5.8vw,74px)}
-    .home-item{display:block;width:fit-content}
-    .home-title{font-weight:800;letter-spacing:-0.02em;line-height:0.9;font-size:clamp(62px,8.4vw,140px)}
-    /* AQUI está o ajuste pedido: GALLERY + shop juntos, sem space-between */
-    .home-item--gallery{display:inline-flex;align-items:baseline;gap:clamp(14px,2.4vw,34px);white-space:nowrap}
-    .home-sub{font-weight:500;letter-spacing:-0.01em;line-height:1;font-size:clamp(18px,2.2vw,34px);white-space:nowrap;transform:translateY(-0.06em)}
-    @media (max-width:600px){
-      .home{padding:34px 22px}
-      .home-nav{gap:54px}
-      .home-title{font-size:clamp(54px,14vw,92px)}
-      .home-sub{font-size:clamp(18px,5vw,24px)}
-    }
-  </style>
+body{
+  margin:0;
+  background:#f3f3f3;
+  color:#000;
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  <!-- CSS normal (mantém limpo). Cache-bust para evitar versões antigas -->
-  <link rel="stylesheet" href="style.css?v=home-20260217" />
-</head>
+a, a:visited{
+  color: inherit;
+  text-decoration: none;
+}
 
-<body>
-  <main class="home">
-    <nav class="home-nav" aria-label="Homepage">
+.home{
+  min-height:100vh;
+  padding: clamp(28px, 6vw, 72px);
+}
 
-      <!-- 1) GALLERY shop -->
-      <a class="home-item home-item--gallery" href="#">
-        <span class="home-title">GALLERY</span>
-        <span class="home-sub">shop</span>
-      </a>
+.home-nav{
+  display:flex;
+  flex-direction:column;
+  gap: clamp(34px, 5.8vw, 74px);
+}
 
-      <!-- 2) PHOTO SERIES -->
-      <a class="home-item" href="#">
-        <span class="home-title">PHOTO SERIES</span>
-      </a>
+.home-item{
+  display:block;
+  width: fit-content;
+}
 
-      <!-- 3) STREET SESSIONS -->
-      <a class="home-item" href="streetsessions/">
-        <span class="home-title">STREET SESSIONS</span>
-      </a>
+.home-title{
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:0.9;
+  font-size: clamp(62px, 8.4vw, 140px);
+}
 
-    </nav>
-  </main>
-</body>
-</html>
+/* ✅ Ajuste pedido: shop junto e com o MESMO “espaço editorial” sempre */
+.home-item--gallery{
+  display:inline-flex;
+  align-items: baseline;
+  gap: clamp(14px, 2.4vw, 34px);
+  white-space: nowrap;
+}
+
+.home-sub{
+  font-weight:500;
+  letter-spacing:-0.01em;
+  line-height:1;
+  font-size: clamp(18px, 2.2vw, 34px);
+  white-space: nowrap;
+  transform: translateY(-0.06em);
+}
+
+@media (max-width: 600px){
+  .home{
+    padding: 34px 22px;
+  }
+
+  .home-nav{
+    gap: 54px;
+  }
+
+  .home-title{
+    font-size: clamp(54px, 14vw, 92px);
+  }
+
+  .home-sub{
+    font-size: clamp(18px, 5vw, 24px);
+  }
+}
