@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alta Photo Lisboa</title>
 
+  <!-- FALLBACK CRÍTICO: garante que nunca ficas com links azuis / layout default -->
   <style>
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -16,79 +17,48 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
-
-    /* Nunca azul, nunca sublinhado */
-    a, a:visited{color:#000; text-decoration:none}
-
-    /* Layout */
-    .wrap{
-      min-height:100vh;
-      padding: clamp(28px, 6vw, 72px);
-    }
-
-    .menu{
-      display:flex;
-      flex-direction:column;
-      gap: clamp(34px, 5.8vw, 74px);
-    }
-
-    /* Cada linha */
-    .item{display:block; width:fit-content}
-
-    /* Tipografia grande (como pediste) */
-    .title{
-      font-weight:800;
-      letter-spacing:-0.02em;
-      line-height:0.9;
-      font-size: clamp(62px, 8.4vw, 140px);
-    }
-
-    /* GALLERY + shop na mesma linha, com espaço consistente */
-    .gallery{
-      display:inline-flex;
-      align-items:baseline;
-      gap: clamp(14px, 2.4vw, 34px);
-      white-space:nowrap;
-    }
-
-    .shop{
-      font-weight:500;
-      letter-spacing:-0.01em;
-      line-height:1;
-      font-size: clamp(18px, 2.2vw, 34px);
-      transform: translateY(-0.06em);
-      white-space:nowrap;
-    }
-
-    /* Mobile: mantém o mesmo visual, só ajusta escala */
-    @media (max-width: 600px){
-      .wrap{padding: 34px 22px}
-      .menu{gap: 54px}
-      .title{font-size: clamp(54px, 14vw, 92px)}
-      .shop{font-size: clamp(18px, 5vw, 24px)}
+    a,a:visited{color:inherit;text-decoration:none}
+    .home{min-height:100vh;padding:clamp(28px,6vw,72px)}
+    .home-nav{display:flex;flex-direction:column;gap:clamp(34px,5.8vw,74px)}
+    .home-item{display:block;width:fit-content}
+    .home-title{font-weight:800;letter-spacing:-0.02em;line-height:0.9;font-size:clamp(62px,8.4vw,140px)}
+    /* AQUI está o ajuste pedido: GALLERY + shop juntos, sem space-between */
+    .home-item--gallery{display:inline-flex;align-items:baseline;gap:clamp(14px,2.4vw,34px);white-space:nowrap}
+    .home-sub{font-weight:500;letter-spacing:-0.01em;line-height:1;font-size:clamp(18px,2.2vw,34px);white-space:nowrap;transform:translateY(-0.06em)}
+    @media (max-width:600px){
+      .home{padding:34px 22px}
+      .home-nav{gap:54px}
+      .home-title{font-size:clamp(54px,14vw,92px)}
+      .home-sub{font-size:clamp(18px,5vw,24px)}
     }
   </style>
+
+  <!-- CSS normal (mantém limpo). Cache-bust para evitar versões antigas -->
+  <link rel="stylesheet" href="style.css?v=home-20260217" />
 </head>
 
 <body>
-  <div class="wrap">
-    <nav class="menu" aria-label="Homepage">
+  <main class="home">
+    <nav class="home-nav" aria-label="Homepage">
 
-      <a class="item gallery" href="#">
-        <span class="title">GALLERY</span>
-        <span class="shop">shop</span>
+      <!-- 1) GALLERY shop -->
+      <a class="home-item home-item--gallery" href="#">
+        <span class="home-title">GALLERY</span>
+        <span class="home-sub">shop</span>
       </a>
 
-      <a class="item" href="#">
-        <span class="title">PHOTO SERIES</span>
+      <!-- 2) PHOTO SERIES -->
+      <a class="home-item" href="#">
+        <span class="home-title">PHOTO SERIES</span>
       </a>
 
-      <a class="item" href="streetsessions/">
-        <span class="title">STREET SESSIONS</span>
+      <!-- 3) STREET SESSIONS -->
+      <a class="home-item" href="streetsessions/">
+        <span class="home-title">STREET SESSIONS</span>
       </a>
 
     </nav>
-  </div>
+  </main>
 </body>
 </html>
 
