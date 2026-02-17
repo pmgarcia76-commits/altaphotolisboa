@@ -117,5 +117,21 @@ a, a:visited{
   transform: translateY(-0.08em) !important;
   letter-spacing: -0.01em !important;
 }
+.home-title{
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:0.9;
+  font-size: clamp(62px, 8.4vw, 140px);
+}
+
+.home-sub{
+  font-weight:700;
+  letter-spacing:-0.01em;
+  line-height:1;
+  font-size: clamp(26px, 3.2vw, 52px);
+  transform: translateY(-0.08em);
+  white-space: nowrap;
+}
+
 
 
