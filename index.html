@@ -4,33 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alta Photo Lisboa</title>
-  <meta name="description" content="Alta Photo Lisboa — Gallery, Photo Series, Street Sessions." />
 
-  <!-- CSS CRÍTICO (backup) para nunca veres a página azul mesmo que o ficheiro falhe -->
-  <style>
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;background:#f3f3f3;color:#000;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    a{color:inherit;text-decoration:none}
-  </style>
-
-  <!-- IMPORTANTE: caminho RELATIVO (não /style.css) -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- cache-bust para garantir que o desktop não fica preso a CSS antigo -->
+  <link rel="stylesheet" href="style.css?v=20260217" />
 </head>
 
 <body>
   <main class="home">
-    <nav class="home-nav" aria-label="Main">
-      <a class="home-link home-link--gallery" href="#gallery">
-        <span class="home-link__main">GALLERY</span>
-        <span class="home-link__sub">shop</span>
+    <nav class="home-nav" aria-label="Homepage">
+      <!-- Linha 1 -->
+      <a class="home-item home-item--gallery" href="#gallery">
+        <span class="home-title">GALLERY</span>
+        <span class="home-sub">shop</span>
       </a>
 
-      <a class="home-link" href="#photoseries">
-        <span class="home-link__main">PHOTO SERIES</span>
+      <!-- Linha 2 -->
+      <a class="home-item" href="#photoseries">
+        <span class="home-title">PHOTO SERIES</span>
       </a>
 
-      <a class="home-link" href="streetsessions/">
-        <span class="home-link__main">STREET SESSIONS</span>
+      <!-- Linha 3 -->
+      <a class="home-item" href="streetsessions/">
+        <span class="home-title">STREET SESSIONS</span>
       </a>
     </nav>
   </main>
