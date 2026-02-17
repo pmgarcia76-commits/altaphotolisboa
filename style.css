@@ -89,6 +89,13 @@ a, a:visited{
   .street{ gap: 16px; }
   .photoRow{ gap: 7px; }
 }
+.stack{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap: 0;
+}
+
 
 
 
