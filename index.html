@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALTA PHOTO LISBOA</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alta Photo Lisboa</title>
+  <meta name="description" content="Alta Photo Lisboa — Gallery, Photo Series, Street Sessions." />
+  <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
-
   <main class="home">
+    <nav class="home-nav" aria-label="Main">
+      <!-- 1) GALLERY shop (mesma linha, espaçamento controlado, sem empurrar para a direita) -->
+      <a class="home-link home-link--gallery" href="#gallery">
+        <span class="home-link__main">GALLERY</span>
+        <span class="home-link__sub">shop</span>
+      </a>
 
-    <!-- 1 -->
-    <h1 class="line">
-      <span class="word">GALLERY</span>
-      <span class="shop">shop</span>
-    </h1>
+      <!-- 2) PHOTO SERIES -->
+      <a class="home-link" href="#photoseries">
+        <span class="home-link__main">PHOTO SERIES</span>
+      </a>
 
-    <!-- 2 -->
-    <h1 class="line">PHOTO SERIES</h1>
-
-    <!-- 3 -->
-    <h1 class="line">STREET SESSIONS</h1>
-
+      <!-- 3) STREET SESSIONS -->
+      <a class="home-link" href="/streetsessions/">
+        <span class="home-link__main">STREET SESSIONS</span>
+      </a>
+    </nav>
   </main>
-
 </body>
 </html>
