@@ -2,10 +2,7 @@
    Base
 ========================= */
 * { box-sizing: border-box; }
-
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   margin: 0;
@@ -16,8 +13,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mata o “azul/sub-linhado” */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* =========================
-   Home layout (editorial)
+   Home layout
 ========================= */
 .home {
   min-height: 100vh;
@@ -26,7 +29,6 @@ body {
   align-items: flex-start;
 }
 
-/* Mantém as 3 linhas com ritmo rigoroso */
 .home-nav {
   display: flex;
   flex-direction: column;
@@ -35,17 +37,14 @@ body {
   max-width: 1400px;
 }
 
-/* Link base */
+/* Link */
 .home-link {
-  display: inline-flex;          /* IMPORTANT: não ocupa a largura toda (evita "shop" ir para longe) */
-  align-items: baseline;         /* alinha “shop” pela baseline */
-  gap: clamp(14px, 2.4vw, 34px); /* espaço consistente entre GALLERY e shop */
-  text-decoration: none;
-  color: inherit;
-  width: fit-content;            /* trava o link ao conteúdo */
+  display: inline-flex;
+  align-items: baseline;
+  gap: clamp(14px, 2.4vw, 34px);
+  width: fit-content;
 }
 
-/* Tipografia principal (grande, editorial) */
 .home-link__main {
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -54,40 +53,29 @@ body {
   display: inline-block;
 }
 
-/* "shop" — não minúsculo, não empurrado, e não quebra no mobile */
 .home-link__sub {
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1;
   font-size: clamp(18px, 2.2vw, 34px);
   white-space: nowrap;
-  transform: translateY(-0.06em); /* pequeno ajuste visual para ficar “editorial” ao lado */
+  transform: translateY(-0.06em);
 }
 
-/* Evita que “GALLERY shop” quebre em duas linhas no mobile */
-.home-link--gallery {
-  flex-wrap: nowrap;
-}
+.home-link--gallery { flex-wrap: nowrap; }
 
-/* Acessibilidade: focus visível mas discreto */
 .home-link:focus-visible {
   outline: 2px solid #000;
   outline-offset: 6px;
 }
 
 /* =========================
-   Mobile refinements
+   Mobile
 ========================= */
 @media (max-width: 520px) {
-  .home {
-    padding: 34px 22px;
-  }
+  .home { padding: 34px 22px; }
+  .home-nav { gap: 54px; }
 
-  .home-nav {
-    gap: 54px;
-  }
-
-  /* Ajuste fino para caber bem e manter “shop” ao lado */
   .home-link__main {
     font-size: clamp(52px, 14vw, 86px);
     line-height: 0.92;
@@ -98,5 +86,4 @@ body {
     transform: translateY(-0.05em);
   }
 }
-
 
