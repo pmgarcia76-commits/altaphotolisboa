@@ -17,7 +17,10 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    a, a:visited { color: inherit; text-decoration: none; }
+    a, a:visited {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .home{
       min-height:100vh;
@@ -31,34 +34,31 @@
       align-items:flex-start;
     }
 
+    /* Títulos principais (GALLERY, PHOTO SERIES, STREET PHOTO) */
     .title{
       font-weight:800;
       letter-spacing:-0.02em;
       line-height:0.9;
       font-size: clamp(62px, 8.4vw, 140px);
-      display:block;
+      display:inline-block;
     }
 
-    /* ✅ GALLERY + shop juntos, sem qualquer “empurrão” */
+    /* Linha com texto principal + subtítulo (shop / walk tour) */
     .galleryline{
       display:inline-flex;
       align-items:baseline;
       justify-content:flex-start;
-      gap: 6px;                 /* MAIS PRÓXIMO (desktop) */
+      gap: 6px; /* MESMO espaço para shop e walk tour (desktop) */
       width: max-content;
       white-space: nowrap;
     }
 
-    .galleryline .title{
-      display:inline-block;
-    }
-
-    /* ✅ shop MAIOR + MAIS BOLD */
+    /* Subtexto (shop e walk tour) */
     .shop{
-      font-weight:900;                          /* MAIS BOLD */
+      font-weight:900;
       letter-spacing:-0.01em;
       line-height:1;
-      font-size: clamp(40px, 4.6vw, 74px);      /* MAIOR (desktop) */
+      font-size: clamp(40px, 4.6vw, 74px); /* tamanho intermédio */
       transform: translateY(-0.09em);
       white-space: nowrap;
     }
@@ -66,12 +66,18 @@
     @media (max-width: 600px){
       .home{ padding: 34px 22px; }
       .nav{ gap: 56px; }
-      .title{ font-size: clamp(54px, 14vw, 92px); }
 
-      .galleryline{ gap: 2px; }                 /* MAIS PRÓXIMO (mobile) */
+      .title{
+        font-size: clamp(54px, 14vw, 92px);
+      }
+
+      /* IGUAL ao desktop → elimina diferenças de espaçamento */
+      .galleryline{
+        gap: 6px;
+      }
 
       .shop{
-        font-size: clamp(30px, 7.2vw, 48px);    /* MAIOR (mobile) */
+        font-size: clamp(30px, 7.2vw, 48px);
         transform: translateY(-0.07em);
       }
     }
@@ -91,11 +97,10 @@
         <span class="title">PHOTO SERIES</span>
       </a>
 
- <a class="galleryline" href="streetsessions/">
-  <span class="title">STREET PHOTO</span>
-  <span class="shop">walk tour</span>
-</a>
-
+      <a class="galleryline" href="streetsessions/">
+        <span class="title">STREET PHOTO</span>
+        <span class="shop">walk tour</span>
+      </a>
 
     </nav>
   </main>
