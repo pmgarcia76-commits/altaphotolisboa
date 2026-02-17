@@ -5,40 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alta Photo Lisboa</title>
 
-  <!-- fallback: garante que nunca ficas com links azuis/layout default -->
   <style>
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
     body{
-      margin:0;background:#f3f3f3;color:#000;
+      background:#f3f3f3;
+      color:#000;
       font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    a,a:visited{color:inherit;text-decoration:none}
-  </style>
+    a, a:visited { color: inherit; text-decoration: none; }
 
-  <link rel="stylesheet" href="style.css?v=home-20260217-2" />
+    .home{
+      min-height:100vh;
+      padding: clamp(28px, 6vw, 72px);
+    }
+
+    .nav{
+      display:flex;
+      flex-direction:column;
+      gap: clamp(34px, 5.8vw, 74px);
+      align-items:flex-start;
+    }
+
+    /* Tipografia grande, igual em desktop/mobile (só escala) */
+    .title{
+      font-weight:800;
+      letter-spacing:-0.02em;
+      line-height:0.9;
+      font-size: clamp(62px, 8.4vw, 140px);
+      display:block;
+    }
+
+    /* LINHA 1: GALLERY + shop SEMPRE JUNTOS */
+    .galleryline{
+      display:inline-flex;          /* inline => não estica a largura */
+      align-items:baseline;
+      justify-content:flex-start;
+      gap: 12px;                    /* <-- JUNTO, FIXO */
+      width: max-content;           /* <-- impede “empurrões” */
+      white-space: nowrap;
+    }
+
+    .galleryline .title{
+      display:inline-block;         /* <-- GALLERY não “vira bloco” nesta linha */
+    }
+
+    .shop{
+      font-weight:500;
+      letter-spacing:-0.01em;
+      line-height:1;
+      font-size: clamp(18px, 2.2vw, 34px);
+      transform: translateY(-0.06em);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px){
+      .home{ padding: 34px 22px; }
+      .nav{ gap: 54px; }
+      .title{ font-size: clamp(54px, 14vw, 92px); }
+      .shop{ font-size: clamp(18px, 5vw, 24px); }
+      .galleryline{ gap: 10px; }   /* ainda mais “junto” no mobile */
+    }
+  </style>
 </head>
 
 <body>
   <main class="home">
-    <nav class="home-nav" aria-label="Homepage">
+    <nav class="nav" aria-label="Homepage">
 
-      <a class="home-item home-item--gallery" href="#">
-        <span class="home-title">GALLERY</span>
-        <span class="home-sub">shop</span>
+      <a class="galleryline" href="#">
+        <span class="title">GALLERY</span>
+        <span class="shop">shop</span>
       </a>
 
-      <a class="home-item" href="#">
-        <span class="home-title">PHOTO SERIES</span>
+      <a href="#">
+        <span class="title">PHOTO SERIES</span>
       </a>
 
-      <a class="home-item" href="streetsessions/">
-        <span class="home-title">STREET SESSIONS</span>
+      <a href="streetsessions/">
+        <span class="title">STREET SESSIONS</span>
       </a>
 
     </nav>
   </main>
 </body>
 </html>
-
