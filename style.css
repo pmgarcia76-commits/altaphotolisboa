@@ -159,7 +159,53 @@ a, a:visited{
     font-size: clamp(30px, 7.2vw, 48px);
     transform: none;
   }
+} 
+/* STREET em cima */
+.streetline{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap: 6px;
 }
+
+/* Linha de baixo: PHOTO + walk tour */
+.photoline{
+  display:inline-flex;
+  align-items:baseline;
+  gap: 6px; /* mesmo tipo de espaçamento que gallery/shop */
+}
+
+/* PHOTO mantém o tamanho grande mas ligeiramente mais leve visualmente */
+.photo{
+  line-height:0.9;
+}
+
+/* walk tour com tamanho intermédio (como pediste antes) */
+.walk{
+  font-weight:900;
+  letter-spacing:-0.02em;
+  line-height:1;
+  font-size: clamp(40px, 4.6vw, 74px);
+  white-space: nowrap;
+  transform: translateY(-0.08em);
+}
+
+/* Mobile consistente */
+@media (max-width: 600px){
+  .streetline{
+    gap: 6px;
+  }
+
+  .photoline{
+    gap: 6px;
+  }
+
+  .walk{
+    font-size: clamp(30px, 7.2vw, 48px);
+    transform: translateY(-0.06em);
+  }
+}
+
 
 
 
