@@ -66,12 +66,19 @@ a, a:visited{
 }
 
 /* ========== 3) STREET BLOCK ========== */
+/* STREET em cima + PHOTO por baixo + walk tour por baixo (com espaçamento como os outros) */
 .street{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  gap: 18px; /* espaço entre STREET, PHOTO e walk tour */
+  gap: 0; /* remove o espaço grande entre linhas */
 }
+
+/* dá só um “respiro” pequeno antes do walk tour (como o shop abaixo de GALLERY) */
+.street .sub{
+  margin-top: clamp(6px, 0.9vw, 10px);
+}
+
 
 
 /* ========== RESPONSIVE ========== */
