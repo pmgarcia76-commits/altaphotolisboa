@@ -70,20 +70,15 @@ a, a:visited{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  gap: 18px; /* espaço entre STREET e a linha PHOTO + walk tour */
+  gap: 18px; /* espaço entre STREET, PHOTO e walk tour */
 }
 
-.photoRow{
-  display:inline-flex;
-  align-items:baseline;
-  gap: 8px;
-  white-space:nowrap;
-}
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 600px){
-  .home{ padding: 34px 22px; }
-  .nav{ gap: 56px; }
+  .street{ gap: 16px; }
+}
+
 
   .title{
     font-size: clamp(54px, 14vw, 92px);
