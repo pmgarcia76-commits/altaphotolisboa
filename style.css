@@ -85,4 +85,25 @@ a, a:visited{
     gap: 12px;
   }
 }
+/* === FIX DEFINITIVO: shop JUNTO de GALLERY (override contra regras antigas) === */
+.home-item--gallery{
+  display: inline-flex !important;
+  width: fit-content !important;
+  justify-content: flex-start !important;
+  align-items: baseline !important;
+  gap: 12px !important;          /* <-- mais junto */
+}
+
+.home-item--gallery .home-title{
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+.home-item--gallery .home-sub{
+  margin-left: 0 !important;     /* <-- mata “empurrão” */
+  margin-right: 0 !important;
+  float: none !important;
+}
+
 
