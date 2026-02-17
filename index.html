@@ -4,116 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alta Photo Lisboa</title>
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-
-    body{
-      background:#f3f3f3;
-      color:#000;
-      font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    a, a:visited{
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .home{
-      min-height:100vh;
-      padding: clamp(28px, 6vw, 72px);
-    }
-
-    .nav{
-      display:flex;
-      flex-direction:column;
-      gap: clamp(40px, 6vw, 80px);
-      align-items:flex-start;
-    }
-
-    .title{
-      font-weight:800;
-      letter-spacing:-0.02em;
-      line-height:0.9;
-      font-size: clamp(62px, 8.4vw, 140px);
-      display:inline-block;
-    }
-
-    .sub{
-      font-weight:900;
-      letter-spacing:-0.04em;
-      line-height:1;
-      font-size: clamp(40px, 4.6vw, 74px);
-      white-space: nowrap;
-      transform: translateY(-0.10em);
-      display:inline-block;
-    }
-
-    /* GALLERY + shop */
-    .line{
-      display:inline-flex;
-      align-items:baseline;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    /* STREET em cima + (PHOTO + walk tour) por baixo */
-    .street{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      gap: 18px;
-    }
-
-    .photoRow{
-      display:inline-flex;
-      align-items:baseline;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 600px){
-      .home{ padding: 34px 22px; }
-      .nav{ gap: 56px; }
-
-      .title{
-        font-size: clamp(54px, 14vw, 92px);
-      }
-
-      .sub{
-        font-size: clamp(30px, 7.2vw, 48px);
-        transform: translateY(-0.08em);
-      }
-
-      .line{ gap: 7px; }
-      .street{ gap: 16px; }
-      .photoRow{ gap: 7px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main class="home">
     <nav class="nav" aria-label="Homepage">
 
-    <a class="line line--stack" href="#">
-  <span class="title">GALLERY</span>
-  <span class="sub sub--shop">shop</span>
-</a>
+      <!-- 1) GALLERY + shop (shop por baixo) -->
+      <a class="block stack" href="#">
+        <span class="title">GALLERY</span>
+        <span class="sub sub--stack">shop</span>
+      </a>
 
+      <!-- 2) PHOTO / SERIES (SERIES por baixo de PHOTO) -->
+      <a class="block stack" href="#">
+        <span class="title">PHOTO</span>
+        <span class="title">SERIES</span>
+      </a>
 
-
-      <a class="stack" href="#">
-  <span class="title">PHOTO</span>
-  <span class="title">SERIES</span>
-</a>
-
-
-      <a class="street" href="streetsessions/">
+      <!-- 3) STREET em cima + PHOTO walk tour por baixo -->
+      <a class="block street" href="streetsessions/">
         <span class="title">STREET</span>
+
         <span class="photoRow">
           <span class="title">PHOTO</span>
           <span class="sub">walk tour</span>
@@ -124,4 +37,3 @@
   </main>
 </body>
 </html>
-
