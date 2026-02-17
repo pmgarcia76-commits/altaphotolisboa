@@ -105,5 +105,17 @@ a, a:visited{
   margin-right: 0 !important;
   float: none !important;
 }
+/* ===== FIX FINAL: shop maior, mais bold e mais próximo de GALLERY ===== */
+
+.galleryline{
+  gap: 2px !important; /* mais próximo */
+}
+
+.shop{
+  font-weight: 900 !important;              /* mais bold */
+  font-size: clamp(40px, 4.5vw, 72px) !important; /* maior (desktop + mobile) */
+  transform: translateY(-0.08em) !important;
+  letter-spacing: -0.01em !important;
+}
 
 
