@@ -1,122 +1,226 @@
-/* ================================================================
-   ALTA PHOTO LISBOA — DESIGN SYSTEM
-   ================================================================ */
+/* ========================================================
+   ALTA PHOTO LISBOA — Design System + Homepage
+   ======================================================== */
 
 /* ========== TOKENS ========== */
 :root {
-  /* — Type stack — */
-  --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                   Helvetica, Arial, sans-serif;
+  /* — Typography — */
+  --font-stack: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* — Type scale (fluid) — */
-  --type-display:   clamp(62px, 8.4vw, 140px);   /* .title            */
-  --type-heading:   clamp(40px, 4.6vw, 74px);     /* .sub              */
-  --type-body:      clamp(15px, 1.2vw, 18px);     /* body / paragraphs */
-  --type-caption:   clamp(11px, 0.9vw, 13px);     /* small / metadata  */
+  --fs-display:   clamp(62px, 8.4vw, 140px);
+  --fs-heading:   clamp(40px, 4.6vw, 74px);
+  --fs-subhead:   clamp(28px, 3vw, 48px);
+  --fs-body:      clamp(15px, 1.2vw, 18px);
+  --fs-caption:   clamp(11px, 0.9vw, 13px);
 
-  /* — Weights — */
-  --weight-regular: 400;
-  --weight-bold:    700;
-  --weight-black:   900;
+  --lh-display:   0.9;
+  --lh-heading:   1.0;
+  --lh-body:      1.65;
 
-  /* — Tracking — */
-  --track-tight:   -0.03em;
-  --track-tighter: -0.04em;
-  --track-normal:   0em;
-  --track-wide:     0.04em;
+  --ls-tight:    -0.04em;
+  --ls-display:  -0.02em;
+  --ls-wide:      0.12em;
 
-  /* — Leading — */
-  --leading-none:    0.9;
-  --leading-tight:   1.0;
-  --leading-body:    1.45;
+  --fw-regular:   400;
+  --fw-bold:      800;
+  --fw-black:     900;
 
-  /* — Spacing scale (8px base rhythm) — */
-  --space-xs:   clamp(8px,  1vw,   12px);
-  --space-s:    clamp(16px, 2vw,   24px);
-  --space-m:    clamp(28px, 4vw,   48px);
-  --space-l:    clamp(40px, 6vw,   72px);
-  --space-xl:   clamp(56px, 8vw,   96px);
-  --space-2xl:  clamp(72px, 10vw, 128px);
+  /* — Spacing scale — */
+  --space-xs:     clamp(8px, 1.5vw, 14px);
+  --space-s:      clamp(16px, 2.5vw, 28px);
+  --space-m:      clamp(28px, 4vw, 48px);
+  --space-l:      clamp(40px, 6vw, 80px);
+  --space-xl:     clamp(56px, 8vw, 112px);
+
+  /* — Page gutter (used on every page) — */
+  --page-pad:     clamp(28px, 6vw, 72px);
 
   /* — Palette — */
-  --color-bg:      #f3f3f3;
-  --color-text:    #000;
-  --color-muted:   #666;
+  --c-bg:         #f3f3f3;
+  --c-text:       #000;
+  --c-muted:      #666;
+  --c-rule:       #000;
 }
 
 /* ========== BASE ========== */
-*{ box-sizing:border-box; margin:0; padding:0; }
-html, body{ height:100%; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 
-body{
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  font-size: var(--type-body);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-body);
-  letter-spacing: var(--track-normal);
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-stack);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, a:visited{
+a, a:visited {
   color: inherit;
   text-decoration: none;
 }
 
-/* ========== LAYOUT ========== */
-.home{
-  min-height: 100vh;
-  padding: var(--space-l);
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.nav{
+/* ========== LAYOUT ========== */
+.home {
+  min-height: 100vh;
+  padding: var(--page-pad);
+}
+
+.nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-l);
 }
 
-.block{
+.block {
   display: block;
   width: fit-content;
 }
 
-/* ========== TYPE ========== */
-.title{
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
+/* ========== TYPE — Display ========== */
+.title {
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-display);
+  font-size: var(--fs-display);
   display: block;
 }
 
-.sub{
-  font-size: var(--type-heading);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tighter);
-  line-height: var(--leading-tight);
+.sub {
+  font-weight: var(--fw-black);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-heading);
+  font-size: var(--fs-heading);
   white-space: nowrap;
   display: inline-block;
   transform: translateY(-0.10em);
 }
 
-/* ========== STACK (vertical groupings) ========== */
-.stack{
+/* ========== STACK (GALLERY/shop, PHOTO/SERIES) ========== */
+.stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
+  gap: 0px;
 }
 
-.sub--stack{
+.sub--stack {
   transform: none;
 }
 
 /* ========== STREET ========== */
-.street{
+.street {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0px;
+}
+
+
+/* ========================================================
+   INNER PAGES — shared classes
+   ======================================================== */
+
+/* ---- Page container ---- */
+.page {
+  padding: var(--page-pad);
+}
+
+/* ---- Page header ---- */
+.page-hero {
+  margin-bottom: var(--space-l);
+}
+
+.page-title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-display);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-display);
+}
+
+.page-subtitle {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-wide);
+  color: var(--c-muted);
+  text-transform: uppercase;
+  margin-top: var(--space-xs);
+}
+
+/* ---- Image grid ---- */
+.page-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-s);
+  margin-bottom: var(--space-l);
+}
+
+@media (max-width: 640px) {
+  .page-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Body text ---- */
+.page-text {
+  max-width: 720px;
+  margin-bottom: var(--space-l);
+}
+
+.page-text p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--c-text);
+  margin-bottom: var(--space-s);
+}
+
+.page-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Contact / footer ---- */
+.page-footer {
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--c-rule);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.page-footer p {
+  margin-bottom: var(--space-xs);
+}
+
+.page-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.page-footer a {
+  text-decoration: none;
+  color: var(--c-text);
+  border-bottom: 1px solid var(--c-text);
+  padding-bottom: 1px;
+}
+
+/* ---- Back link ---- */
+.back {
+  display: inline-block;
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: var(--space-l);
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: var(--c-text);
 }
