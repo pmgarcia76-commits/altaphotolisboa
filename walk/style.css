@@ -141,3 +141,36 @@ a, a:visited{
   height: auto;
   display: block;
 }
+/* ========== WALK PAGE — SUBTITLE + META ========== */
+.walk-subtitle{
+  margin-top: var(--space-xs);
+}
+
+.walk-meta{
+  margin-top: var(--space-l);
+}
+
+.walk-meta-line{
+  font-size: var(--type-body);
+  font-weight: var(--weight-black);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: var(--leading-body);
+  display: block;
+}
+
+.walk-back{
+  margin-top: var(--space-xl);
+  padding-bottom: var(--space-l);
+}
+
+.walk-back a{
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.walk-back a:hover{
+  opacity: 1;
+}
