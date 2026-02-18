@@ -1,48 +1,65 @@
-/* ==========================================================
+/* ================================================
    ALTA PHOTO LISBOA — Design System
-   ========================================================== */
+   ================================================ */
 
-/* ── TOKENS ── */
+/* ========== TOKENS ========== */
 :root {
-  /* Spacing scale (clamp for fluid rhythm) */
-  --space-xs:  clamp(8px,   1.5vw,  16px);
-  --space-s:   clamp(16px,  2.5vw,  28px);
-  --space-m:   clamp(28px,  4vw,    48px);
-  --space-l:   clamp(40px,  6vw,    72px);
-  --space-xl:  clamp(56px,  8vw,    96px);
+  /* Spacing scale */
+  --space-xs:  clamp(8px,  1.5vw, 14px);
+  --space-s:   clamp(16px, 2.5vw, 28px);
+  --space-m:   clamp(28px, 4vw,  48px);
+  --space-l:   clamp(40px, 6vw,  72px);
+  --space-xl:  clamp(56px, 8vw,  96px);
+  --space-2xl: clamp(72px, 10vw, 128px);
 
   /* Type sizes */
-  --type-title: clamp(62px, 8.4vw, 140px);
-  --type-sub:   clamp(40px, 4.6vw, 74px);
-  --type-body:  clamp(15px, 1.6vw, 19px);
-  --type-tag:   clamp(11px, 1.2vw, 14px);
+  --type-display: clamp(62px, 8.4vw, 140px);
+  --type-heading: clamp(40px, 4.6vw, 74px);
+  --type-body:    clamp(15px, 1.6vw, 18px);
+  --type-caption:  clamp(11px, 1.2vw, 13px);
+  --type-back:     clamp(12px, 1.3vw, 14px);
 
-  /* Colours */
-  --c-bg:   #f3f3f3;
-  --c-fg:   #000;
-  --c-mute: #666;
+  /* Type tuning */
+  --tracking-tight:  -0.02em;
+  --tracking-tighter:-0.04em;
+  --tracking-wide:    0.12em;
+  --leading-tight:    0.9;
+  --leading-snug:     1.0;
+  --leading-body:     1.65;
 
-  /* Tracking */
-  --track-tight:  -0.02em;
-  --track-tighter:-0.04em;
-  --track-wide:    0.12em;
+  /* Palette */
+  --color-bg:   #f3f3f3;
+  --color-fg:   #000;
+  --color-muted:#666;
 }
 
-/* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+
+/* ========== BASE ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
 
 body {
-  background: var(--c-bg);
-  color: var(--c-fg);
+  background: var(--color-bg);
+  color: var(--color-fg);
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, a:visited { color: inherit; text-decoration: none; }
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 
-/* ── LAYOUT ── */
+
+/* ========== LAYOUT ========== */
 .home {
   min-height: 100vh;
   padding: var(--space-l);
@@ -60,27 +77,28 @@ a, a:visited { color: inherit; text-decoration: none; }
   width: fit-content;
 }
 
-/* ── TITLE ── */
+
+/* ========== TYPE — DISPLAY ========== */
 .title {
   font-weight: 800;
-  letter-spacing: var(--track-tight);
-  line-height: 0.9;
-  font-size: var(--type-title);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  font-size: var(--type-display);
   display: block;
 }
 
-/* ── SUB ── */
 .sub {
   font-weight: 900;
-  letter-spacing: var(--track-tighter);
-  line-height: 1;
-  font-size: var(--type-sub);
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-snug);
+  font-size: var(--type-heading);
   white-space: nowrap;
   display: inline-block;
   transform: translateY(-0.10em);
 }
 
-/* ── STACK (vertical grouping) ── */
+
+/* ========== STACK ========== */
 .stack {
   display: flex;
   flex-direction: column;
@@ -92,7 +110,8 @@ a, a:visited { color: inherit; text-decoration: none; }
   transform: none;
 }
 
-/* ── STREET (same vertical stack) ── */
+
+/* ========== STREET ========== */
 .street {
   display: flex;
   flex-direction: column;
@@ -100,82 +119,103 @@ a, a:visited { color: inherit; text-decoration: none; }
   gap: 0;
 }
 
-/* ==========================================================
-   INNER PAGES (walk, photoseries, etc.)
-   ========================================================== */
 
-/* ── PAGE HEADER ── */
-.page-header {
+/* ========== BACK LINK (subpages) ========== */
+.back {
+  display: inline-block;
+  font-size: var(--type-back);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-l);
+  color: var(--color-fg);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--color-fg);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.back:hover {
+  opacity: 0.5;
+}
+
+
+/* ========== PAGE HERO (subpages) ========== */
+.page-hero {
   margin-bottom: var(--space-l);
 }
 
-.page-tagline {
-  font-size: var(--type-tag);
-  font-weight: 500;
-  letter-spacing: var(--track-wide);
-  color: var(--c-mute);
-  margin-top: var(--space-s);
-  text-transform: uppercase;
+
+/* ========== WALK PAGE ========== */
+
+/* Hero */
+.walk-hero {
+  margin-bottom: var(--space-l);
 }
 
-/* ── WALK GALLERY — single column, always ── */
-.walk-gallery {
+.walk-subtitle {
+  font-size: var(--type-caption);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: var(--space-s);
+}
+
+/* Images — single column, full width, all breakpoints */
+.walk-images {
   display: flex;
   flex-direction: column;
   gap: var(--space-s);
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-l);
 }
 
-.walk-gallery img {
+.walk-images img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ── BODY TEXT ── */
-.page-body {
+/* Text */
+.walk-text {
   max-width: 720px;
-  margin-bottom: var(--space-l);
+  margin-bottom: var(--space-xl);
 }
 
-.body-text {
+.walk-text p {
   font-size: var(--type-body);
   font-weight: 400;
-  line-height: 1.65;
+  line-height: var(--leading-body);
   letter-spacing: 0.005em;
-  color: var(--c-fg);
+  color: var(--color-fg);
   margin-bottom: var(--space-s);
 }
 
-.body-text:last-child {
+.walk-text p:last-child {
   margin-bottom: 0;
 }
 
-/* ── PAGE FOOTER ── */
-.page-footer {
-  margin-top: var(--space-m);
+/* Contact */
+.walk-contact {
   padding-top: var(--space-m);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--color-fg);
 }
 
-.page-footer a {
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 1px;
+.walk-contact p {
+  font-size: var(--type-caption);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  line-height: 1.8;
 }
 
-.page-footer a:hover {
-  opacity: 0.6;
+.walk-contact a {
+  color: var(--color-fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-fg);
+  transition: opacity 0.2s ease;
 }
 
-/* ==========================================================
-   MOBILE REFINEMENTS
-   ========================================================== */
-@media (max-width: 600px) {
-  .walk-gallery {
-    gap: var(--space-xs);
-  }
-
-  .page-body {
-    max-width: 100%;
-  }
+.walk-contact a:hover {
+  opacity: 0.5;
 }
