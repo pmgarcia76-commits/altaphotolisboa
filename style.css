@@ -1,56 +1,72 @@
-/* ================================================
+/* ============================================================
    ALTA PHOTO LISBOA — Design System
-   ================================================ */
+   ============================================================ */
 
 /* ========== TOKENS ========== */
 :root {
-  /* Spacing scale */
-  --space-xs:  clamp(8px,  1.5vw, 14px);
-  --space-s:   clamp(16px, 2.5vw, 28px);
-  --space-m:   clamp(28px, 4vw,  48px);
-  --space-l:   clamp(40px, 6vw,  72px);
-  --space-xl:  clamp(56px, 8vw,  96px);
-  --space-2xl: clamp(72px, 10vw, 128px);
+  /* —— Typography —— */
+  --font-stack:       -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  /* Type sizes */
-  --type-display: clamp(62px, 8.4vw, 140px);
-  --type-heading: clamp(40px, 4.6vw, 74px);
-  --type-body:    clamp(15px, 1.6vw, 18px);
-  --type-caption:  clamp(11px, 1.2vw, 13px);
-  --type-back:     clamp(12px, 1.3vw, 14px);
+  --fs-display:       clamp(62px, 8.4vw, 140px);
+  --fs-headline:      clamp(40px, 4.6vw, 74px);
+  --fs-body:          clamp(15px, 1.2vw, 18px);
+  --fs-caption:       clamp(11px, 0.9vw, 13px);
 
-  /* Type tuning */
-  --tracking-tight:  -0.02em;
-  --tracking-tighter:-0.04em;
-  --tracking-wide:    0.12em;
-  --leading-tight:    0.9;
-  --leading-snug:     1.0;
-  --leading-body:     1.65;
+  --lh-display:       0.9;
+  --lh-headline:      1.0;
+  --lh-body:          1.65;
+  --lh-caption:       1.4;
 
-  /* Palette */
-  --color-bg:   #f3f3f3;
-  --color-fg:   #000;
-  --color-muted:#666;
+  --ls-display:       -0.02em;
+  --ls-headline:      -0.04em;
+  --ls-caption:        0.18em;
+
+  --fw-display:       800;
+  --fw-headline:      900;
+  --fw-body:          400;
+
+  /* —— Spacing scale (8 px base) —— */
+  --space-xs:          8px;
+  --space-s:          16px;
+  --space-m:          24px;
+  --space-l:          40px;
+  --space-xl:         64px;
+  --space-2xl:        96px;
+
+  /* —— Adaptive page gutter —— */
+  --page-gutter:      clamp(28px, 6vw, 72px);
+
+  /* —— Colour —— */
+  --c-bg:             #f3f3f3;
+  --c-fg:             #000;
+  --c-muted:          #777;
+  --c-rule:           #000;
+
+  /* —— Layout —— */
+  --content-max:      800px;
+  --gallery-gap:      clamp(16px, 2.4vw, 30px);
+  --nav-gap:          clamp(40px, 6vw, 80px);
 }
 
 
 /* ========== BASE ========== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-stack);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 a, a:visited {
@@ -59,17 +75,24 @@ a, a:visited {
 }
 
 
-/* ========== LAYOUT ========== */
+/* ========== PAGE SHELL ========== */
+.page {
+  min-height: 100vh;
+  padding: var(--page-gutter);
+}
+
+
+/* ========== HOMEPAGE — NAV ========== */
 .home {
   min-height: 100vh;
-  padding: var(--space-l);
+  padding: var(--page-gutter);
 }
 
 .nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-l);
+  gap: var(--nav-gap);
 }
 
 .block {
@@ -78,27 +101,27 @@ a, a:visited {
 }
 
 
-/* ========== TYPE — DISPLAY ========== */
+/* ========== DISPLAY TYPE (nav items) ========== */
 .title {
-  font-weight: 800;
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-tight);
-  font-size: var(--type-display);
+  font-weight: var(--fw-display);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-display);
+  font-size: var(--fs-display);
   display: block;
 }
 
 .sub {
-  font-weight: 900;
-  letter-spacing: var(--tracking-tighter);
-  line-height: var(--leading-snug);
-  font-size: var(--type-heading);
+  font-weight: var(--fw-headline);
+  letter-spacing: var(--ls-headline);
+  line-height: var(--lh-headline);
+  font-size: var(--fs-headline);
   white-space: nowrap;
   display: inline-block;
   transform: translateY(-0.10em);
 }
 
 
-/* ========== STACK ========== */
+/* ========== STACKED NAV BLOCKS ========== */
 .stack {
   display: flex;
   flex-direction: column;
@@ -111,7 +134,7 @@ a, a:visited {
 }
 
 
-/* ========== STREET ========== */
+/* ========== STREET BLOCK ========== */
 .street {
   display: flex;
   flex-direction: column;
@@ -120,18 +143,96 @@ a, a:visited {
 }
 
 
-/* ========== BACK LINK (subpages) ========== */
+/* ========== INNER PAGE — HERO ========== */
+.hero {
+  margin-bottom: var(--space-xl);
+}
+
+.hero-title {
+  font-weight: var(--fw-display);
+  font-size: var(--fs-display);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-display);
+}
+
+.hero-caption {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-body);
+  letter-spacing: var(--ls-caption);
+  line-height: var(--lh-caption);
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-top: var(--space-s);
+}
+
+
+/* ========== INNER PAGE — GALLERY GRID ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gallery-gap);
+  margin-bottom: var(--space-xl);
+}
+
+
+/* ========== INNER PAGE — BODY TEXT ========== */
+.text {
+  max-width: var(--content-max);
+}
+
+.text p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-body);
+  margin-bottom: var(--space-m);
+  color: var(--c-fg);
+}
+
+.text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ========== INNER PAGE — CONTACT / FOOTER ========== */
+.contact {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-l);
+  border-top: 1px solid var(--c-rule);
+}
+
+.contact p {
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-caption);
+  line-height: var(--lh-caption);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.contact p:last-child {
+  margin-bottom: 0;
+}
+
+.contact a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--c-fg);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.contact a:hover {
+  opacity: 0.5;
+}
+
+
+/* ========== BACK LINK ========== */
 .back {
   display: inline-block;
-  font-size: var(--type-back);
-  font-weight: 600;
-  letter-spacing: var(--tracking-wide);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-caption);
   text-transform: uppercase;
-  margin-bottom: var(--space-l);
-  color: var(--color-fg);
-  text-decoration: none;
-  border-bottom: 1.5px solid var(--color-fg);
-  padding-bottom: 2px;
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--c-fg);
+  padding-bottom: 1px;
   transition: opacity 0.2s ease;
 }
 
@@ -140,82 +241,21 @@ a, a:visited {
 }
 
 
-/* ========== PAGE HERO (subpages) ========== */
-.page-hero {
-  margin-bottom: var(--space-l);
-}
-
-
-/* ========== WALK PAGE ========== */
-
-/* Hero */
-.walk-hero {
-  margin-bottom: var(--space-l);
-}
-
-.walk-subtitle {
-  font-size: var(--type-caption);
-  font-weight: 500;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-top: var(--space-s);
-}
-
-/* Images — single column, full width, all breakpoints */
-.walk-images {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-s);
-  margin-bottom: var(--space-l);
-}
-
-.walk-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Text */
-.walk-text {
-  max-width: 720px;
-  margin-bottom: var(--space-xl);
-}
-
-.walk-text p {
-  font-size: var(--type-body);
-  font-weight: 400;
-  line-height: var(--leading-body);
-  letter-spacing: 0.005em;
-  color: var(--color-fg);
-  margin-bottom: var(--space-s);
-}
-
-.walk-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* Contact */
-.walk-contact {
-  padding-top: var(--space-m);
-  border-top: 1px solid var(--color-fg);
-}
-
-.walk-contact p {
-  font-size: var(--type-caption);
-  font-weight: 500;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  line-height: 1.8;
-}
-
-.walk-contact a {
-  color: var(--color-fg);
-  text-decoration: none;
-  border-bottom: 1px solid var(--color-fg);
+/* ========== HOVER — NAV BLOCKS ========== */
+.block {
   transition: opacity 0.2s ease;
 }
 
-.walk-contact a:hover {
-  opacity: 0.5;
+.block:hover {
+  opacity: 0.6;
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
 }
