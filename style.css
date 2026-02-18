@@ -142,3 +142,76 @@ a, a:visited{
   height: auto;
   display: block;
 }
+/* ========== INNER PAGES (GALLERY, PHOTO SERIES, WALK) ========== */
+.page{
+  min-height: 100vh;
+  padding: var(--space-l);
+}
+
+.back{
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  display: inline-block;
+  margin-bottom: var(--space-xl);
+  transition: opacity 0.2s ease;
+}
+
+.back:hover{
+  opacity: 0.55;
+}
+
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.hero-title{
+  font-size: var(--type-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-none);
+  margin: 0;
+  padding: 0;
+}
+
+.hero-sub{
+  font-size: var(--type-heading);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tighter);
+  line-height: var(--leading-tight);
+  margin: 0;
+  padding: 0;
+}
+
+.hero-caption{
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  margin-top: var(--space-s);
+}
+
+/* Walk page — text block */
+.walk-intro{
+  margin-top: var(--space-l);
+  max-width: 720px;
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+}
+
+/* Walk page — photo grid */
+.walk-photos{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.walk-photos img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
