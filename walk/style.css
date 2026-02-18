@@ -1,11 +1,26 @@
+/* =================================================
+   WALK — CSS ISOLADO
+   ================================================= */
 /* RESET */
 
+* { box-sizing: border-box; }
+
+html, body {
 * {
   margin: 0;
   padding: 0;
+  background: #fff;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
 }
 
+img { display: block; width: 100%; height: auto; }
+
+.wrap{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 70px 60px 120px 60px;
 body {
   font-family: Helvetica, Arial, sans-serif;
   background: #f5f5f5;
@@ -13,8 +28,20 @@ body {
   padding: 40px;
 }
 
+/* Top */
+.topline{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+}
 /* HERO */
 
+.links{
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 .hero h1 {
   font-size: 64px;
   line-height: 1.05;
@@ -22,15 +49,31 @@ body {
   margin-bottom: 10px;
 }
 
+.link{
 .hero p {
   font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7a7a7a;
+  text-decoration: none;
   letter-spacing: 3px;
   color: #777;
   margin-bottom: 40px;
 }
 
+.link:hover{ opacity: 0.7; }
+
+/* Hero */
+.hero{ margin-bottom: 60px; }
 /* GALLERY */
 
+.title{
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  font-size: 72px;
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -38,25 +81,51 @@ body {
   margin-bottom: 60px;
 }
 
+.subtitle{
+  margin: 18px 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #7a7a7a;
+  font-size: 14px;
 .gallery img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+/* Blocks */
+.image-block{ margin: 0 0 60px 0; }
 /* TEXT */
 
+.copy{
+  max-width: 720px;
+  margin: 0 0 60px 0;
 .text {
   max-width: 800px;
 }
 
+.copy p{
+  margin: 0;
+  font-size: 18px;
 .text p {
   font-size: 16px;
   line-height: 1.7;
+  letter-spacing: 0.01em;
   margin-bottom: 20px;
   color: #333;
 }
 
+/* Footer */
+.footer{
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7a7a7a;
 /* CONTACT */
 
 .contact {
@@ -65,38 +134,56 @@ body {
   letter-spacing: 1px;
 }
 
+.footer-link{
+  color: inherit;
 .contact a {
   color: #111;
   text-decoration: none;
   border-bottom: 1px solid #111;
 }
 
+.footer-link:hover{ opacity: 0.7; }
 /* MOBILE */
 
+.dot{ opacity: 0.5; }
 @media (max-width: 768px) {
 
+/* Mobile */
+@media (max-width: 768px){
+  .wrap{ padding: 48px 22px 90px 22px; }
   body {
     padding: 20px;
   }
 
+  .topline{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   .hero h1 {
     font-size: 42px;
     line-height: 1.1;
   }
 
+  .title{
+    font-size: 44px;
+    line-height: 1.05;
   .hero p {
     font-size: 11px;
     margin-bottom: 30px;
   }
 
+  .subtitle{
+    font-size: 12px;
+    letter-spacing: 0.25em;
   .gallery {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
+  .image-block, .copy{ margin-bottom: 44px; }
   .text p {
     font-size: 15px;
     line-height: 1.6;
   }
 
-}
+  .copy p{ font-size: 16px; line-height: 1.75; }
