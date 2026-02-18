@@ -1,73 +1,121 @@
+/* ================================================================
+   ALTA PHOTO LISBOA — DESIGN SYSTEM
+   ================================================================ */
+
+/* ========== TOKENS ========== */
+:root {
+  /* — Type stack — */
+  --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+                   Helvetica, Arial, sans-serif;
+
+  /* — Type scale (fluid) — */
+  --type-display:   clamp(62px, 8.4vw, 140px);   /* .title            */
+  --type-heading:   clamp(40px, 4.6vw, 74px);     /* .sub              */
+  --type-body:      clamp(15px, 1.2vw, 18px);     /* body / paragraphs */
+  --type-caption:   clamp(11px, 0.9vw, 13px);     /* small / metadata  */
+
+  /* — Weights — */
+  --weight-regular: 400;
+  --weight-bold:    700;
+  --weight-black:   900;
+
+  /* — Tracking — */
+  --track-tight:   -0.03em;
+  --track-tighter: -0.04em;
+  --track-normal:   0em;
+  --track-wide:     0.04em;
+
+  /* — Leading — */
+  --leading-none:    0.9;
+  --leading-tight:   1.0;
+  --leading-body:    1.45;
+
+  /* — Spacing scale (8px base rhythm) — */
+  --space-xs:   clamp(8px,  1vw,   12px);
+  --space-s:    clamp(16px, 2vw,   24px);
+  --space-m:    clamp(28px, 4vw,   48px);
+  --space-l:    clamp(40px, 6vw,   72px);
+  --space-xl:   clamp(56px, 8vw,   96px);
+  --space-2xl:  clamp(72px, 10vw, 128px);
+
+  /* — Palette — */
+  --color-bg:      #f3f3f3;
+  --color-text:    #000;
+  --color-muted:   #666;
+}
+
 /* ========== BASE ========== */
 *{ box-sizing:border-box; margin:0; padding:0; }
 html, body{ height:100%; }
 
 body{
-  background:#f3f3f3;
-  color:#000;
-  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  letter-spacing: var(--track-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a, a:visited{
-  color:inherit;
-  text-decoration:none;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ========== LAYOUT ========== */
 .home{
-  min-height:100vh;
-  padding: clamp(28px, 6vw, 72px);
+  min-height: 100vh;
+  padding: var(--space-l);
 }
 
 .nav{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap: clamp(40px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-l);
 }
 
 .block{
-  display:block;
-  width:fit-content;
+  display: block;
+  width: fit-content;
 }
 
 /* ========== TYPE ========== */
 .title{
-  font-weight:800;
-  letter-spacing:-0.02em;
-  line-height:0.9;
-  font-size: clamp(62px, 8.4vw, 140px);
-  display:block;
+  font-size: var(--type-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-none);
+  display: block;
 }
 
 .sub{
-  font-weight:900;
-  letter-spacing:-0.04em;
-  line-height:1;
-  font-size: clamp(40px, 4.6vw, 74px);
-  white-space:nowrap;
-  display:inline-block;
+  font-size: var(--type-heading);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tighter);
+  line-height: var(--leading-tight);
+  white-space: nowrap;
+  display: inline-block;
   transform: translateY(-0.10em);
 }
 
-/* ========== STACK (GALLERY/shop e PHOTO/SERIES) ========== */
+/* ========== STACK (vertical groupings) ========== */
 .stack{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 0;
 }
 
-/* quando o sub está por baixo, não queremos a subida óptica */
 .sub--stack{
-  transform:none;
+  transform: none;
 }
 
-/* ========== STREET (3 linhas com espaçamento IGUAL aos outros) ========== */
+/* ========== STREET ========== */
 .street{
-  display:flex;
-  flex-direction:column;
-  align-items:flex
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
