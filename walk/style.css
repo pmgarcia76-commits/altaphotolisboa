@@ -1,128 +1,143 @@
-/* =================================================
-   WALK — CSS ISOLADO
-   ================================================= */
+/* ================================================================
+   ALTA PHOTO LISBOA — DESIGN SYSTEM (EDITORIAL / INSTITUTIONAL)
+   Shared by ALL pages (home + walk + future pages)
+   ================================================================ */
 
-* { box-sizing: border-box; }
+/* ========== TOKENS ========== */
+:root {
+  --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+                  Helvetica, Arial, sans-serif;
 
-html, body {
+  --type-display: clamp(62px, 8.4vw, 140px);
+  --type-heading: clamp(40px, 4.6vw, 74px);
+  --type-body: clamp(15px, 1.2vw, 18px);
+
+  --weight-regular: 400;
+  --weight-black: 900;
+
+  --track-tight: -0.03em;
+  --track-tighter: -0.04em;
+
+  --leading-none: 0.9;
+  --leading-tight: 1.0;
+  --leading-body: 1.45;
+
+  --space-xs: clamp(8px, 1vw, 12px);
+  --space-s: clamp(16px, 2vw, 24px);
+  --space-m: clamp(28px, 4vw, 48px);
+  --space-l: clamp(40px, 6vw, 72px);
+  --space-xl: clamp(56px, 8vw, 96px);
+
+  --color-bg: #f3f3f3;
+  --color-text: #000;
+}
+
+/* ========== BASE ========== */
+*{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #000;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-img { display: block; width: 100%; height: auto; }
-
-.wrap{
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 70px 60px 120px 60px;
+html, body{
+  height: 100%;
 }
 
-/* Top */
-.topline{
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 30px;
-  margin-bottom: 28px;
+body{
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.links{
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.link{
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #7a7a7a;
-  text-decoration: none;
-}
-
-.link:hover{ opacity: 0.7; }
-
-/* Hero */
-.hero{ margin-bottom: 60px; }
-
-.title{
-  margin: 0;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-  font-size: 72px;
-}
-
-.subtitle{
-  margin: 18px 0 0 0;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  color: #7a7a7a;
-  font-size: 14px;
-}
-
-/* Blocks */
-.image-block{ margin: 0 0 60px 0; }
-
-.copy{
-  max-width: 720px;
-  margin: 0 0 60px 0;
-}
-
-.copy p{
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-}
-
-/* Footer */
-.footer{
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #7a7a7a;
-}
-
-.footer-link{
+a, a:visited{
   color: inherit;
   text-decoration: none;
 }
 
-.footer-link:hover{ opacity: 0.7; }
+/* ========== MAIN CONTAINER (MARGINS ALIGNMENT) ========== */
+.home{
+  min-height: 100vh;
+  padding: var(--space-l);
+}
 
-.dot{ opacity: 0.5; }
+/* ========== HOMEPAGE NAV ========== */
+.nav{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-l);
+}
 
-/* Mobile */
-@media (max-width: 768px){
-  .wrap{ padding: 48px 22px 90px 22px; }
+.block{
+  display: block;
+  width: fit-content;
+  transition: opacity 0.2s ease;
+}
 
-  .topline{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
+.block:hover{
+  opacity: 0.55;
+}
 
-  .title{
-    font-size: 44px;
-    line-height: 1.05;
-  }
+/* ========== TYPOGRAPHY ========== */
+.title{
+  font-size: var(--type-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-none);
+  display: block;
+}
 
-  .subtitle{
-    font-size: 12px;
-    letter-spacing: 0.25em;
-  }
+.sub{
+  font-size: var(--type-heading);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tighter);
+  line-height: var(--leading-tight);
+  white-space: nowrap;
+  display: inline-block;
+  transform: translateY(-0.10em);
+}
 
-  .image-block, .copy{ margin-bottom: 44px; }
+.stack{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
 
-  .copy p{ font-size: 16px; line-height: 1.75; }
+.sub--stack{
+  transform: none;
+}
+
+.street{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ========== WALK PAGE ========== */
+.walk-header{
+  margin-top: var(--space-l);
+}
+
+.walk-text{
+  margin-top: var(--space-l);
+  max-width: 720px;
+}
+
+.walk-photos{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.walk-photos img{
+  width: 100%;
+  height: auto;
+  display: block;
 }
