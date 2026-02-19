@@ -232,3 +232,34 @@ a, a:visited{
 .walk-text p:last-child{
   margin-bottom: 0;
 }
+/* ========== LINK STYLE (BLUE + UNDERLINE) ========== */
+.link-blue{
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+.link-blue:visited{
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+/* ========== BACK LINK ========== */
+.back{
+  display: inline-block;
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  margin-bottom: var(--space-m);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.back:hover{
+  opacity: 0.55;
+}
+
+/* ========== PAGE SHARED STYLES ========== */
+.page{
+  min-height: 100vh;
+  padding: var(--space-l);
+}
