@@ -239,3 +239,15 @@ a, a:visited{
   font-weight: var(--weight-regular);
   padding-bottom: var(--space-s);
 }
+/* ========== NAV DIVIDER RULES (FULL-WIDTH) ========== */
+.nav-rule{
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-text);
+  opacity: 0.2;
+}
+
+.nav{
+  width: 100%;
+}
