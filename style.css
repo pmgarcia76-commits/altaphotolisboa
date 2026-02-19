@@ -263,3 +263,23 @@ a, a:visited{
   min-height: 100vh;
   padding: var(--space-l);
 }
+/* ========== WALK TITLE — MOBILE FIX ========== */
+.walk-header .title {
+  white-space: nowrap;
+}
+
+.walk-header .sub {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .walk-header .title {
+    font-size: clamp(38px, 12vw, 140px);
+    white-space: nowrap;
+  }
+
+  .walk-header .sub {
+    font-size: clamp(24px, 7.5vw, 74px);
+    white-space: nowrap;
+  }
+}
