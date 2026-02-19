@@ -10,7 +10,6 @@
   --type-display: clamp(62px, 8.4vw, 140px);
   --type-heading: clamp(40px, 4.6vw, 74px);
   --type-body: clamp(15px, 1.2vw, 18px);
-  --type-small: clamp(13px, 1vw, 16px);
 
   --weight-regular: 400;
   --weight-black: 900;
@@ -30,7 +29,6 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
-  --color-link: #0055cc;
 }
 
 /* ========== BASE ========== */
@@ -60,7 +58,7 @@ a, a:visited{
   text-decoration: none;
 }
 
-/* ========== MAIN CONTAINER (CRITICAL FOR MARGIN ALIGNMENT) ========== */
+/* ========== MAIN CONTAINER ========== */
 .home{
   min-height: 100vh;
   padding: var(--space-l);
@@ -103,7 +101,7 @@ a, a:visited{
   transform: translateY(-0.10em);
 }
 
-/* ========== STACK (GALLERY / PHOTO SERIES) ========== */
+/* ========== STACK ========== */
 .stack{
   display: flex;
   flex-direction: column;
@@ -122,16 +120,12 @@ a, a:visited{
   align-items: flex-start;
 }
 
-/* ========== INTERIOR PAGES — SHARED ========== */
-.page{
-  min-height: 100vh;
-  padding: var(--space-l);
-}
-
+/* ========== BACK LINK (SUBPAGES) ========== */
 .back{
   display: inline-block;
   font-size: var(--type-body);
   font-weight: var(--weight-regular);
+  text-decoration: none;
   margin-bottom: var(--space-m);
 }
 
@@ -139,81 +133,87 @@ a, a:visited{
   opacity: 0.55;
 }
 
-/* ========== PAGE HEADER ========== */
-.page-header{
+/* ========== WALK PAGE ========== */
+.walk-header{
   margin-bottom: var(--space-m);
 }
 
-.page-title{
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
-  display: block;
-}
-
-.page-subtitle{
-  font-size: var(--type-heading);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tighter);
-  line-height: var(--leading-tight);
-  display: block;
-}
-
-.page-tagline{
+.walk-subtitle{
   font-size: var(--type-body);
   font-weight: var(--weight-regular);
   line-height: var(--leading-body);
   margin-top: var(--space-xs);
 }
 
-/* ========== PHOTO GRID ========== */
-.photos{
+.walk-photos{
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
 }
 
-.photos img{
+.walk-photos img{
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ========== PAGE TEXT BLOCK ========== */
+.walk-text{
+  margin-top: var(--space-m);
+  max-width: none;
+}
+
+.walk-text p{
+  margin-bottom: 1em;
+}
+
+.walk-text p:last-child{
+  margin-bottom: 0;
+}
+
+.walk-text a{
+  color: #0055d4;
+  text-decoration: underline;
+}
+
+.walk-text a:visited{
+  color: #0055d4;
+}
+
+/* ========== GALLERY / PHOTOSERIES PAGES ========== */
+.page-header{
+  margin-bottom: var(--space-m);
+}
+
+.page-photos{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.page-photos img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .page-text{
   margin-top: var(--space-m);
-  max-width: 100%;
+  max-width: none;
 }
 
 .page-text p{
-  margin-bottom: 1.45em;
+  margin-bottom: 1em;
 }
 
 .page-text p:last-child{
   margin-bottom: 0;
 }
 
-/* ========== LINK STYLES ========== */
-.link-handle{
-  color: var(--color-link);
+.page-text a{
+  color: #0055d4;
   text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
-.link-handle:visited{
-  color: var(--color-link);
-}
-
-.link-handle:hover{
-  opacity: 0.7;
-}
-
-.link-contact{
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.link-contact:hover{
-  opacity: 0.7;
+.page-text a:visited{
+  color: #0055d4;
 }
