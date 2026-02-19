@@ -1,251 +1,52 @@
-/* ================================================================
-   ALTA PHOTO LISBOA — DESIGN SYSTEM (EDITORIAL / INSTITUTIONAL)
-   ================================================================ */
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Príncipe Real Photo Walk — Alta Photo Lisboa</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <main class="home">
+    <div class="top-bar">
+      <a href="../">← Alta Photo Lisboa</a>
+      <span class="rule"></span>
+    </div>
 
-/* ========== TOKENS ========== */
-:root {
-  --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-                  Helvetica, Arial, sans-serif;
+    <header class="page-header">
+      <h1 class="page-title">PRÍNCIPE REAL<br>PHOTO WALK</h1>
+      <p class="page-subtitle">gallery anchored tour</p>
+    </header>
 
-  --type-display: clamp(62px, 8.4vw, 140px);
-  --type-heading: clamp(40px, 4.6vw, 74px);
-  --type-body: clamp(15px, 1.2vw, 18px);
-  --type-small: clamp(11px, 0.9vw, 13px);
-  --type-sub: clamp(20px, 2.4vw, 38px);
+    <section class="walk-photos">
+      <img src="../images/photo1.jpg" alt="Príncipe Real Photo Walk 1" />
+      <img src="../images/photo2.jpg" alt="Príncipe Real Photo Walk 2" />
+      <img src="../images/photo3.jpg" alt="Príncipe Real Photo Walk 3" />
+      <img src="../images/photo4.jpg" alt="Príncipe Real Photo Walk 4" />
+    </section>
 
-  --weight-regular: 400;
-  --weight-bold: 700;
-  --weight-black: 900;
+    <section class="walk-text">
+      <p>An intimate, author-driven photo walk in Príncipe Real, Lisbon's most culturally active and visually distinct neighbourhood.</p>
 
-  --track-tight: -0.03em;
-  --track-tighter: -0.04em;
+      <p>Conceived and led by Pedro, photographer and founder of Alta Photo Lisboa, each participant is photographed as the central subject of a personal editorial. The participant becomes the model and protagonist of the narrative.</p>
 
-  --leading-none: 0.9;
-  --leading-tight: 1.0;
-  --leading-body: 1.45;
+      <p>The walk starts at Alta Photo Lisboa, shared with Alta Records Lisboa — home to a 35-year vinyl collection curated by Sérgio, lifelong collector and DJ.</p>
 
-  --space-xs: clamp(8px, 1vw, 12px);
-  --space-s: clamp(16px, 2vw, 24px);
-  --space-m: clamp(28px, 4vw, 48px);
-  --space-l: clamp(40px, 6vw, 72px);
-  --space-xl: clamp(56px, 8vw, 96px);
+      <p>Quiet streets, everyday spaces, shops, cafés and Praça das Flores shape the walk — places defined by local life rather than tourism.</p>
 
-  --color-bg: #f3f3f3;
-  --color-text: #000;
-  --color-link: #0048e0;
-  --color-muted: #666;
-  --color-rule: #000;
-}
+      <p>Each participant receives one printed 1/2 photography, printed and signed by the photographer. The full editorial is shared privately via download link.</p>
 
-/* ========== BASE ========== */
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+      <p>Duration: approximately 2 hours.<br>Price per participant: 150 €.</p>
 
-html, body{
-  height: 100%;
-}
+      <p><a class="link-blue" href="https://wa.me/351916420077" target="_blank" rel="noopener">WhatsApp +351 916 420 077</a><br>
+      <a class="link-blue" href="https://www.instagram.com/alta.photo.lisboa" target="_blank" rel="noopener">Instagram @alta.photo.lisboa</a></p>
+    </section>
 
-body{
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  font-size: var(--type-body);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a, a:visited{
-  color: inherit;
-  text-decoration: none;
-}
-
-/* ========== MAIN CONTAINER ========== */
-.home{
-  min-height: 100vh;
-  padding: var(--space-l);
-  display: flex;
-  flex-direction: column;
-}
-
-/* ========== TOP BAR (back link + rule) ========== */
-.top-bar{
-  margin-bottom: var(--space-m);
-}
-
-.top-bar a{
-  font-size: var(--type-small);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--color-text);
-}
-
-.top-bar a:hover{
-  opacity: 0.55;
-}
-
-.top-bar .rule{
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--color-rule);
-  margin-top: var(--space-xs);
-}
-
-/* ========== NAV (HOMEPAGE) ========== */
-.nav{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-l);
-  flex: 1;
-}
-
-.block{
-  display: block;
-  width: fit-content;
-  transition: opacity 0.2s ease;
-}
-
-.block:hover{
-  opacity: 0.55;
-}
-
-/* ========== TYPOGRAPHY ========== */
-.title{
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
-  display: block;
-}
-
-.sub{
-  font-size: var(--type-heading);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tighter);
-  line-height: var(--leading-tight);
-  white-space: nowrap;
-  display: inline-block;
-  transform: translateY(-0.10em);
-}
-
-/* ========== STACK ========== */
-.stack{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0;
-}
-
-.sub--stack{
-  transform: none;
-}
-
-/* ========== STREET BLOCK ========== */
-.street{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* ========== PAGE HEADER (inner pages) ========== */
-.page-header{
-  margin-bottom: var(--space-m);
-}
-
-.page-title{
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
-}
-
-.page-subtitle{
-  font-size: var(--type-sub);
-  font-weight: var(--weight-regular);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-tight);
-  color: var(--color-muted);
-  margin-top: var(--space-xs);
-}
-
-/* ========== WALK / GALLERY / SERIES PHOTOS ========== */
-.walk-photos{
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-m);
-}
-
-.walk-photos img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ========== WALK TEXT ========== */
-.walk-text{
-  margin-top: var(--space-m);
-}
-
-.walk-text p{
-  margin-bottom: 1em;
-}
-
-.walk-text p:last-child{
-  margin-bottom: 0;
-}
-
-/* ========== LINK STYLING ========== */
-a.link-blue,
-a.link-blue:visited{
-  color: var(--color-link);
-  text-decoration: underline;
-}
-
-a.link-blue:hover{
-  opacity: 0.7;
-}
-
-/* ========== SITE FOOTER ========== */
-.site-footer{
-  margin-top: var(--space-xl);
-  text-align: right;
-  font-size: var(--type-small);
-  line-height: 1.6;
-}
-
-.site-footer .footer-links{
-  display: inline;
-}
-
-.site-footer .footer-links span{
-  color: var(--color-text);
-  font-weight: var(--weight-regular);
-}
-
-.site-footer .footer-links a{
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: var(--weight-regular);
-}
-
-.site-footer .footer-links a:hover{
-  opacity: 0.55;
-}
-
-/* ========== HOMEPAGE RULE (bottom, above footer) ========== */
-.home-rule{
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--color-rule);
-  margin-top: auto;
-  margin-bottom: var(--space-s);
-}
+    <footer class="site-footer">
+      <div class="footer-links">
+        <span>Instagram</span> <span>WhatsApp</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
