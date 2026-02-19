@@ -30,22 +30,20 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
-  --color-mid: #999;
-  --color-rule: #000;
 }
 
 /* ========== BASE ========== */
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body{
+html, body {
   height: 100%;
 }
 
-body{
+body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-primary);
@@ -56,13 +54,13 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, a:visited{
+a, a:visited {
   color: inherit;
   text-decoration: none;
 }
 
 /* ========== MAIN CONTAINER ========== */
-.home{
+.home {
   min-height: 100vh;
   padding: var(--space-l);
   display: flex;
@@ -70,53 +68,61 @@ a, a:visited{
 }
 
 /* ========== TOP BAR (SUBPAGES) ========== */
-.top-bar{
+.top-bar {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-l);
 }
 
-.top-bar a{
+.top-bar a {
   font-size: var(--type-body);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.01em;
+  font-weight: var(--weight-black);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-text);
 }
 
-/* ========== RULES ========== */
-.rule,
-.home-rule,
-.footer-rule{
+/* ========== RULES / LINES ========== */
+.rule {
   display: block;
   width: 100%;
   height: 1px;
-  background: var(--color-rule);
+  background: var(--color-text);
+}
+
+.home-rule {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-text);
 }
 
 /* ========== NAV (HOMEPAGE) ========== */
-.nav{
+.nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
+  flex: 1;
 }
 
-.block{
+.block {
   display: block;
   width: 100%;
   padding-top: var(--space-m);
   padding-bottom: var(--space-m);
-  border-top: 1px solid var(--color-rule);
+  border-top: 1px solid var(--color-text);
   transition: opacity 0.2s ease;
 }
 
-.block:hover{
+.block:hover {
   opacity: 0.55;
 }
 
 /* ========== TYPOGRAPHY ========== */
-.title{
+.title {
   font-size: var(--type-display);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tight);
@@ -124,124 +130,120 @@ a, a:visited{
   display: block;
 }
 
-.sub{
+.sub {
   font-size: var(--type-heading);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tighter);
   line-height: var(--leading-tight);
-  white-space: nowrap;
   display: inline-block;
-  transform: translateY(-0.10em);
-  color: var(--color-mid);
+  color: #666;
 }
 
-.sub--stack{
-  transform: none;
-}
-
-/* ========== STACK (GALLERY / PHOTO SERIES) ========== */
-.stack{
+/* ========== STACK ========== */
+.stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
 }
 
+.sub--stack {
+  transform: none;
+}
+
 /* ========== STREET BLOCK ========== */
-.street{
+.street {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* ========== HOME-SPECIFIC BOTTOM RULE ========== */
-.home-rule{
-  margin-top: 0;
-}
-
 /* ========== PAGE HEADER (SUBPAGES) ========== */
-.page-header{
-  margin-bottom: var(--space-m);
+.page-header {
+  margin-bottom: var(--space-l);
 }
 
-.page-title{
+.page-title {
   font-size: var(--type-display);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tight);
   line-height: var(--leading-none);
 }
 
-.page-sub{
+.page-subtitle {
   font-size: var(--type-heading);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tighter);
   line-height: var(--leading-tight);
-  color: var(--color-mid);
+  color: #666;
+  margin-top: 0;
 }
 
-/* ========== WALK PAGE (IMAGES + EDITORIAL RHYTHM) ========== */
-.walk-photos{
+/* ========== WALK PAGE ========== */
+.walk-header {
+  margin-top: var(--space-l);
+}
+
+.walk-text {
+  margin-top: var(--space-l);
+  font-weight: var(--weight-bold);
+}
+
+.walk-text p {
+  margin-bottom: var(--space-m);
+}
+
+.walk-text p:last-child {
+  margin-bottom: 0;
+}
+
+.walk-photos {
   display: flex;
   flex-direction: column;
-  gap: var(--space-m);
+  gap: var(--space-l);
 }
 
-.walk-photos img{
+.walk-photos img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ========== WALK TEXT ========== */
-.walk-text{
-  margin-top: var(--space-m);
-  font-weight: var(--weight-bold);
-}
-
-.walk-text p{
-  margin-bottom: var(--space-s);
-}
-
-.walk-text p:last-child{
-  margin-bottom: 0;
-}
-
-/* ========== LINK STYLES ========== */
-.link-underline{
+/* ========== LINKS (UNDERLINED BLACK) ========== */
+.link-blue {
   color: var(--color-text);
   text-decoration: underline;
 }
 
-.link-underline:visited{
+.link-blue:visited {
   color: var(--color-text);
 }
 
-/* ========== FOOTER ========== */
-.site-footer{
+/* ========== SITE FOOTER ========== */
+.site-footer {
   margin-top: auto;
-  padding-top: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--space-s);
+  padding-top: var(--space-l);
 }
 
-.site-footer .footer-rule{
-  width: 100%;
+.site-footer .rule {
+  margin-bottom: var(--space-m);
 }
 
-.footer-links{
+.footer-links {
   display: flex;
+  justify-content: flex-end;
   gap: var(--space-m);
   font-size: var(--type-body);
   font-weight: var(--weight-regular);
 }
 
-.footer-links a{
-  color: var(--color-text);
-  text-decoration: none;
-}
+/* ========== MOBILE ========== */
+@media (max-width: 600px) {
+  .page-title {
+    font-size: clamp(42px, 12vw, 62px);
+  }
 
-.footer-links a:hover{
-  opacity: 0.55;
+  .page-subtitle {
+    font-size: clamp(28px, 8vw, 40px);
+  }
 }
