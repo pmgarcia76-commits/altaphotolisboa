@@ -12,6 +12,7 @@
   --type-body: clamp(15px, 1.2vw, 18px);
 
   --weight-regular: 400;
+  --weight-bold: 700;
   --weight-black: 900;
 
   --track-tight: -0.03em;
@@ -30,6 +31,7 @@
   --color-bg: #f3f3f3;
   --color-text: #000;
   --color-rule: #000;
+  --color-link: #1a0dab;
 }
 
 /* ========== BASE ========== */
@@ -79,14 +81,9 @@ a, a:visited{
 .block{
   display: block;
   width: 100%;
-  transition: opacity 0.2s ease;
   padding-bottom: var(--space-l);
   border-bottom: 1px solid var(--color-rule);
-  margin-bottom: var(--space-l);
-}
-
-.block:last-child{
-  margin-bottom: 0;
+  transition: opacity 0.2s ease;
 }
 
 .block:hover{
@@ -114,7 +111,9 @@ a, a:visited{
 
 /* ========== STACK (GALLERY / PHOTO SERIES) ========== */
 .stack{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .sub--stack{
@@ -123,21 +122,22 @@ a, a:visited{
 
 /* ========== STREET BLOCK ========== */
 .street{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* ========== INACTIVE NAV ITEMS ========== */
-.block.inactive .title,
-.block.inactive .sub{
+/* ========== INACTIVE NAV ITEMS (grey) ========== */
+.block--inactive{
+  pointer-events: auto;
+}
+
+.block--inactive .title,
+.block--inactive .sub{
   color: #999;
 }
 
-/* ========== HOME RULE (bottom, before footer) ========== */
-.home-rule{
-  display: none;
-}
-
-/* ========== TOP BAR (sub-pages) ========== */
+/* ========== TOP BAR (SUB-PAGES) ========== */
 .top-bar{
   margin-bottom: var(--space-m);
 }
@@ -147,6 +147,7 @@ a, a:visited{
   font-weight: var(--weight-black);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: inline-block;
   text-decoration: none;
 }
 
@@ -158,7 +159,7 @@ a, a:visited{
   margin-top: var(--space-xs);
 }
 
-/* ========== PAGE HEADER (sub-pages) ========== */
+/* ========== PAGE HEADER (SUB-PAGES) ========== */
 .page-header{
   margin-bottom: var(--space-m);
 }
@@ -176,31 +177,10 @@ a, a:visited{
   letter-spacing: var(--track-tighter);
   line-height: var(--leading-tight);
   display: block;
-}
-
-.page-caption{
-  font-size: var(--type-body);
   color: #666;
-  margin-top: var(--space-xs);
 }
 
 /* ========== WALK PAGE (IMAGES + EDITORIAL RHYTHM) ========== */
-.walk-header{
-  margin-top: var(--space-l);
-}
-
-.walk-text{
-  margin-top: var(--space-m);
-}
-
-.walk-text p{
-  margin-bottom: var(--space-s);
-}
-
-.walk-text p:last-child{
-  margin-bottom: 0;
-}
-
 .walk-photos{
   display: flex;
   flex-direction: column;
@@ -213,21 +193,35 @@ a, a:visited{
   display: block;
 }
 
-/* ========== LINKS (blue, underlined) ========== */
+/* ========== WALK / GALLERY TEXT BLOCKS ========== */
+.walk-text{
+  margin-top: var(--space-m);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-body);
+}
+
+.walk-text p{
+  margin-bottom: var(--space-s);
+}
+
+.walk-text p:last-child{
+  margin-bottom: 0;
+}
+
+/* ========== LINKS (BLUE, UNDERLINED) ========== */
 .link-blue{
-  color: #0000EE;
+  color: var(--color-link);
   text-decoration: underline;
 }
 
 .link-blue:visited{
-  color: #0000EE;
-  text-decoration: underline;
+  color: var(--color-link);
 }
 
 /* ========== SITE FOOTER ========== */
 .site-footer{
   margin-top: auto;
-  padding-top: var(--space-l);
+  padding-top: var(--space-xl);
   border-top: 1px solid var(--color-rule);
 }
 
@@ -237,17 +231,26 @@ a, a:visited{
   gap: var(--space-s);
   font-size: var(--type-body);
   font-weight: var(--weight-regular);
-  padding-bottom: var(--space-s);
-}
-/* ========== NAV DIVIDER RULES (FULL-WIDTH) ========== */
-.nav-rule{
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--color-text);
-  opacity: 0.2;
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
 }
 
-.nav{
-  width: 100%;
+.footer-links a{
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.footer-links a:hover{
+  opacity: 0.55;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 600px) {
+  .walk-text{
+    max-width: 100%;
+  }
+
+  .footer-links{
+    justify-content: flex-end;
+  }
 }
