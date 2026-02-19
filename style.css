@@ -29,6 +29,7 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
+  --color-link: #1a0dab;
 }
 
 /* ========== BASE ========== */
@@ -125,8 +126,10 @@ a, a:visited{
   display: inline-block;
   font-size: var(--type-body);
   font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
   text-decoration: none;
-  margin-bottom: var(--space-m);
+  color: var(--color-text);
+  transition: opacity 0.2s ease;
 }
 
 .back:hover{
@@ -135,7 +138,7 @@ a, a:visited{
 
 /* ========== WALK PAGE ========== */
 .walk-header{
-  margin-bottom: var(--space-m);
+  margin-top: var(--space-m);
 }
 
 .walk-subtitle{
@@ -149,6 +152,7 @@ a, a:visited{
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
+  margin-top: var(--space-m);
 }
 
 .walk-photos img{
@@ -163,7 +167,7 @@ a, a:visited{
 }
 
 .walk-text p{
-  margin-bottom: 1em;
+  margin-bottom: var(--space-s);
 }
 
 .walk-text p:last-child{
@@ -171,23 +175,24 @@ a, a:visited{
 }
 
 .walk-text a{
-  color: #0055d4;
+  color: var(--color-link);
   text-decoration: underline;
 }
 
 .walk-text a:visited{
-  color: #0055d4;
+  color: var(--color-link);
 }
 
 /* ========== GALLERY / PHOTOSERIES PAGES ========== */
 .page-header{
-  margin-bottom: var(--space-m);
+  margin-top: var(--space-m);
 }
 
 .page-photos{
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
+  margin-top: var(--space-m);
 }
 
 .page-photos img{
@@ -198,11 +203,10 @@ a, a:visited{
 
 .page-text{
   margin-top: var(--space-m);
-  max-width: none;
 }
 
 .page-text p{
-  margin-bottom: 1em;
+  margin-bottom: var(--space-s);
 }
 
 .page-text p:last-child{
@@ -210,10 +214,10 @@ a, a:visited{
 }
 
 .page-text a{
-  color: #0055d4;
+  color: var(--color-link);
   text-decoration: underline;
 }
 
 .page-text a:visited{
-  color: #0055d4;
+  color: var(--color-link);
 }
