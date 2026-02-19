@@ -174,3 +174,96 @@ a, a:visited{
 .walk-back a:hover{
   opacity: 1;
 }
+/* ========== INNER PAGES (GALLERY, WALK, PHOTO SERIES) ========== */
+.back{
+  display: inline-block;
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  text-decoration: none;
+  margin-bottom: var(--space-m);
+}
+
+.back:hover{
+  opacity: 0.55;
+}
+
+/* ========== WALK HEADER — override for tighter spacing ========== */
+.walk-header{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ========== WALK PHOTOS — unified gap = --space-m ========== */
+.walk-photos{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  margin-top: var(--space-m);
+}
+
+.walk-photos img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== WALK TEXT ========== */
+.walk-text{
+  margin-top: var(--space-m);
+  max-width: none;
+}
+
+.walk-text p{
+  margin-bottom: var(--space-s);
+}
+
+.walk-text p:last-child{
+  margin-bottom: 0;
+}
+
+/* ========== LINKS — blue underlined (for @ handles, phone, etc.) ========== */
+.link-blue{
+  color: #0049d6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link-blue:visited{
+  color: #0049d6;
+}
+
+.link-blue:hover{
+  opacity: 0.65;
+}
+
+/* ========== CONTACT LABEL (small text for "WhatsApp", "Instagram") ========== */
+.walk-contact-label{
+  font-size: calc(var(--type-body) * 0.85);
+  font-weight: var(--weight-regular);
+}
+
+/* ========== HERO (PHOTO SERIES placeholder) ========== */
+.page{
+  min-height: 100vh;
+  padding: var(--space-l);
+}
+
+.hero{
+  margin-top: var(--space-m);
+}
+
+.hero-title{
+  font-size: var(--type-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-none);
+}
+
+.hero-caption{
+  font-size: var(--type-body);
+  margin-top: var(--space-s);
+}
