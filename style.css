@@ -11,9 +11,10 @@
   --type-heading: clamp(40px, 4.6vw, 74px);
   --type-body: clamp(15px, 1.2vw, 18px);
   --type-small: clamp(11px, 0.9vw, 13px);
-  --type-sub: clamp(28px, 3.2vw, 52px);
+  --type-sub: clamp(20px, 2.4vw, 38px);
 
   --weight-regular: 400;
+  --weight-bold: 700;
   --weight-black: 900;
 
   --track-tight: -0.03em;
@@ -31,23 +32,23 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
-  --color-link: #0055d4;
-  --color-muted: #555;
+  --color-link: #0048e0;
+  --color-muted: #666;
   --color-rule: #000;
 }
 
 /* ========== BASE ========== */
-*, *::before, *::after {
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html, body{
   height: 100%;
 }
 
-body {
+body{
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-primary);
@@ -58,78 +59,66 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, a:visited {
+a, a:visited{
   color: inherit;
   text-decoration: none;
 }
 
-/* ========== LINK STYLES (UNDERLINED BLUE) ========== */
-.link-blue,
-.link-blue:visited {
-  color: var(--color-link);
-  text-decoration: underline;
-}
-
-.link-blue:hover {
-  opacity: 0.7;
-}
-
 /* ========== MAIN CONTAINER ========== */
-.home {
+.home{
   min-height: 100vh;
   padding: var(--space-l);
-}
-
-/* ========== TOP BAR (SUBPAGES) ========== */
-.top-bar {
   display: flex;
-  align-items: center;
-  padding-bottom: var(--space-s);
-  border-bottom: 1px solid var(--color-rule);
-  margin-bottom: var(--space-l);
+  flex-direction: column;
 }
 
-.top-bar a {
+/* ========== TOP BAR (back link + rule) ========== */
+.top-bar{
+  margin-bottom: var(--space-m);
+}
+
+.top-bar a{
   font-size: var(--type-small);
-  font-weight: var(--weight-black);
+  font-weight: var(--weight-bold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-text);
 }
 
-.top-bar a:hover {
+.top-bar a:hover{
   opacity: 0.55;
 }
 
+.top-bar .rule{
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-rule);
+  margin-top: var(--space-xs);
+}
+
 /* ========== NAV (HOMEPAGE) ========== */
-.nav {
+.nav{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-l);
+  flex: 1;
 }
 
-.block {
+.block{
   display: block;
   width: fit-content;
   transition: opacity 0.2s ease;
 }
 
-.block:hover {
+.block:hover{
   opacity: 0.55;
 }
 
-/* ========== HOMEPAGE SEPARATOR LINE ========== */
-.home-rule {
-  width: 100%;
-  border: none;
-  border-top: 1px solid var(--color-rule);
-  margin: 0;
-}
-
 /* ========== TYPOGRAPHY ========== */
-.title {
+.title{
   font-size: var(--type-display);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tight);
@@ -137,7 +126,7 @@ a, a:visited {
   display: block;
 }
 
-.sub {
+.sub{
   font-size: var(--type-heading);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tighter);
@@ -147,137 +136,116 @@ a, a:visited {
   transform: translateY(-0.10em);
 }
 
-.sub--stack {
-  transform: none;
-}
-
-/* ========== PAGE TITLE (SUBPAGES) ========== */
-.page-title {
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
-  margin: 0;
-}
-
-/* ========== SUBTITLE (walk "gallery anchored tour") ========== */
-.page-subtitle {
-  font-size: var(--type-sub);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tighter);
-  line-height: var(--leading-tight);
-  color: var(--color-muted);
-  margin-top: var(--space-xs);
-}
-
-/* ========== STACK (GALLERY / PHOTO SERIES) ========== */
-.stack {
+/* ========== STACK ========== */
+.stack{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
 }
 
+.sub--stack{
+  transform: none;
+}
+
 /* ========== STREET BLOCK ========== */
-.street {
+.street{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* ========== SUBPAGE CONTAINER ========== */
-.page {
-  min-height: 100vh;
-  padding: var(--space-l);
+/* ========== PAGE HEADER (inner pages) ========== */
+.page-header{
+  margin-bottom: var(--space-m);
 }
 
-/* ========== WALK PAGE / GALLERY PAGE / PHOTOSERIES PAGE ========== */
-.walk-header {
-  margin-bottom: var(--space-l);
+.page-title{
+  font-size: var(--type-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-none);
 }
 
-.walk-photos {
+.page-subtitle{
+  font-size: var(--type-sub);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-tight);
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
+}
+
+/* ========== WALK / GALLERY / SERIES PHOTOS ========== */
+.walk-photos{
   display: flex;
   flex-direction: column;
-  gap: var(--space-l);
+  gap: var(--space-m);
 }
 
-.walk-photos img {
+.walk-photos img{
   width: 100%;
   height: auto;
   display: block;
 }
 
-.walk-text {
-  margin-top: var(--space-l);
+/* ========== WALK TEXT ========== */
+.walk-text{
+  margin-top: var(--space-m);
 }
 
-.walk-text p {
-  margin-bottom: var(--space-m);
+.walk-text p{
+  margin-bottom: 1em;
 }
 
-.walk-text p:last-child {
+.walk-text p:last-child{
   margin-bottom: 0;
 }
 
-/* ========== PAGE FOOTER (LINE + LINKS) ========== */
-.page-footer {
+/* ========== LINK STYLING ========== */
+a.link-blue,
+a.link-blue:visited{
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+a.link-blue:hover{
+  opacity: 0.7;
+}
+
+/* ========== SITE FOOTER ========== */
+.site-footer{
   margin-top: var(--space-xl);
-  padding-top: var(--space-s);
-  border-top: 1px solid var(--color-rule);
+  text-align: right;
+  font-size: var(--type-small);
+  line-height: 1.6;
 }
 
-.page-footer p {
-  margin-bottom: var(--space-xs);
+.site-footer .footer-links{
+  display: inline;
 }
 
-.page-footer p:last-child {
-  margin-bottom: 0;
+.site-footer .footer-links span{
+  color: var(--color-text);
+  font-weight: var(--weight-regular);
 }
 
-/* ========== MOBILE ADJUSTMENTS ========== */
-@media (max-width: 680px) {
-  .home {
-    padding: var(--space-m);
-  }
+.site-footer .footer-links a{
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--weight-regular);
+}
 
-  .page {
-    padding: var(--space-m);
-  }
+.site-footer .footer-links a:hover{
+  opacity: 0.55;
+}
 
-  .title {
-    font-size: clamp(42px, 12vw, 62px);
-  }
-
-  .page-title {
-    font-size: clamp(42px, 12vw, 62px);
-  }
-
-  .sub {
-    font-size: clamp(28px, 7vw, 40px);
-  }
-
-  .page-subtitle {
-    font-size: clamp(20px, 5.5vw, 28px);
-  }
-
-  .nav {
-    gap: var(--space-m);
-  }
-
-  .walk-photos {
-    gap: var(--space-m);
-  }
-
-  .top-bar {
-    margin-bottom: var(--space-m);
-  }
-
-  .walk-header {
-    margin-bottom: var(--space-m);
-  }
-
-  .walk-text {
-    margin-top: var(--space-m);
-  }
+/* ========== HOMEPAGE RULE (bottom, above footer) ========== */
+.home-rule{
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-rule);
+  margin-top: auto;
+  margin-bottom: var(--space-s);
 }
