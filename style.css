@@ -29,21 +29,20 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
-  --color-link: #1a0dab;
 }
 
 /* ========== BASE ========== */
-* {
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html, body{
   height: 100%;
 }
 
-body {
+body{
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-primary);
@@ -54,37 +53,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a, a:visited {
+a, a:visited{
   color: inherit;
   text-decoration: none;
 }
 
 /* ========== MAIN CONTAINER ========== */
-.home {
+.home{
   min-height: 100vh;
   padding: var(--space-l);
 }
 
 /* ========== NAV (HOMEPAGE) ========== */
-.nav {
+.nav{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-l);
 }
 
-.block {
+.block{
   display: block;
   width: fit-content;
   transition: opacity 0.2s ease;
 }
 
-.block:hover {
+.block:hover{
   opacity: 0.55;
 }
 
 /* ========== TYPOGRAPHY ========== */
-.title {
+.title{
   font-size: var(--type-display);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tight);
@@ -92,7 +91,7 @@ a, a:visited {
   display: block;
 }
 
-.sub {
+.sub{
   font-size: var(--type-heading);
   font-weight: var(--weight-black);
   letter-spacing: var(--track-tighter);
@@ -102,114 +101,94 @@ a, a:visited {
   transform: translateY(-0.10em);
 }
 
-/* ========== STACK (GALLERY / PHOTO SERIES) ========== */
-.stack {
+/* ========== STACK ========== */
+.stack{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
 }
 
-.sub--stack {
+.sub--stack{
   transform: none;
 }
 
 /* ========== STREET BLOCK ========== */
-.street {
+.street{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 /* ========== BACK LINK ========== */
-.back {
+.back{
   display: inline-block;
   font-size: var(--type-body);
   font-weight: var(--weight-regular);
   text-decoration: none;
   margin-bottom: var(--space-m);
-  transition: opacity 0.2s ease;
 }
 
-.back:hover {
+.back:hover{
   opacity: 0.55;
 }
 
-/* ========== WALK / SUBPAGE HEADER ========== */
-.walk-header {
-  margin-top: 0;
+/* ========== WALK / GALLERY PAGE — SHARED INNER-PAGE SYSTEM ========== */
+.walk-header{
   margin-bottom: var(--space-m);
 }
 
-.walk-header h1 {
-  margin: 0;
-  padding: 0;
+.walk-subtitle{
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+  display: block;
+  margin-top: var(--space-xs);
 }
 
-/* ========== WALK / SUBPAGE PHOTOS ========== */
-.walk-photos {
+.walk-photos{
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
 }
 
-.walk-photos img {
+.walk-photos img{
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ========== WALK / SUBPAGE TEXT ========== */
-.walk-text {
+.walk-text{
   margin-top: var(--space-m);
-  max-width: 100%;
+  max-width: none;
 }
 
-.walk-text p {
+.walk-text p{
   margin-bottom: var(--space-s);
 }
 
-.walk-text p:last-child {
+.walk-text p:last-child{
   margin-bottom: 0;
 }
 
-.walk-detail {
-  margin-top: var(--space-s);
-}
-
-/* ========== INLINE LINKS (WALK, GALLERY TEXT) ========== */
-.walk-link {
-  color: var(--color-link);
+/* ========== HANDLE LINKS (blue + underlined) ========== */
+.link-handle,
+.link-handle:visited{
+  color: #0000EE;
   text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
-.walk-link:visited {
-  color: var(--color-link);
-}
-
-.walk-link:hover {
+.link-handle:hover{
   opacity: 0.7;
 }
 
-/* ========== PAGE (LEGACY — PHOTO SERIES) ========== */
-.page {
-  min-height: 100vh;
-  padding: var(--space-l);
+/* ========== CONTACT LINKS (blue + underlined) ========== */
+.link-contact,
+.link-contact:visited{
+  color: #0000EE;
+  text-decoration: underline;
 }
 
-.hero {
-  margin-top: var(--space-m);
-}
-
-.hero-title {
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
-}
-
-.hero-caption {
-  font-size: var(--type-body);
-  margin-top: var(--space-s);
+.link-contact:hover{
+  opacity: 0.7;
 }
