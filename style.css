@@ -7,9 +7,11 @@
   --font-primary: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
                   Helvetica, Arial, sans-serif;
 
-  --type-display: clamp(62px, 8.4vw, 140px);
-  --type-heading: clamp(40px, 4.6vw, 74px);
-  --type-body: clamp(15px, 1.2vw, 18px);
+  --type-display: clamp(52px, 7.8vw, 130px);
+  --type-heading: clamp(34px, 4.2vw, 68px);
+  --type-sub: clamp(22px, 2.8vw, 42px);
+  --type-body: clamp(14px, 1.15vw, 17px);
+  --type-small: clamp(11px, 0.9vw, 13px);
 
   --weight-regular: 400;
   --weight-black: 900;
@@ -17,9 +19,9 @@
   --track-tight: -0.03em;
   --track-tighter: -0.04em;
 
-  --leading-none: 0.9;
+  --leading-none: 0.88;
   --leading-tight: 1.0;
-  --leading-body: 1.45;
+  --leading-body: 1.55;
 
   --space-xs: clamp(8px, 1vw, 12px);
   --space-s: clamp(16px, 2vw, 24px);
@@ -29,10 +31,13 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
+  --color-muted: #666;
+  --color-rule: #000;
+  --color-link: #1a53ff;
 }
 
 /* ========== BASE ========== */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -58,15 +63,48 @@ a, a:visited {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ========== MAIN CONTAINER ========== */
 .home {
   min-height: 100vh;
-  padding: var(--space-l);
+  padding: var(--space-m) var(--space-l) var(--space-m);
   display: flex;
   flex-direction: column;
 }
 
-/* ========== NAV (HOMEPAGE) ========== */
+/* ========== TOP BAR (SUBPAGES) ========== */
+.top-bar {
+  margin-bottom: var(--space-m);
+}
+
+.top-bar a {
+  font-size: var(--type-small);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-bottom: var(--space-xs);
+}
+
+.top-bar a:hover {
+  opacity: 0.55;
+}
+
+.top-bar .rule,
+.rule {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-rule);
+  margin-top: 2px;
+}
+
+/* ========== HOMEPAGE NAV ========== */
 .nav {
   display: flex;
   flex-direction: column;
@@ -123,43 +161,17 @@ a, a:visited {
   align-items: flex-start;
 }
 
-/* ========== HOME RULE (between nav and footer on homepage) ========== */
+/* ========== HOME RULE (before footer on homepage) ========== */
 .home-rule {
   display: block;
   width: 100%;
   height: 1px;
-  background: var(--color-text);
-  margin-top: var(--space-m);
+  background: var(--color-rule);
+  margin-top: auto;
+  margin-bottom: var(--space-s);
 }
 
-/* ========== TOP BAR (inner pages) ========== */
-.top-bar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-m);
-}
-
-.top-bar a {
-  font-size: var(--type-body);
-  font-weight: var(--weight-black);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.top-bar a:hover {
-  opacity: 0.55;
-}
-
-.rule {
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--color-text);
-}
-
-/* ========== PAGE HEADER (inner pages) ========== */
+/* ========== PAGE HEADER (SUBPAGES) ========== */
 .page-header {
   margin-bottom: var(--space-m);
 }
@@ -180,13 +192,14 @@ a, a:visited {
 }
 
 .page-caption {
-  font-size: var(--type-body);
+  font-size: var(--type-sub);
   font-weight: var(--weight-regular);
-  color: #666;
+  color: var(--color-muted);
   margin-top: var(--space-xs);
+  display: block;
 }
 
-/* ========== WALK PAGE (IMAGES + EDITORIAL RHYTHM) ========== */
+/* ========== WALK PAGE PHOTOS ========== */
 .walk-photos {
   display: flex;
   flex-direction: column;
@@ -199,30 +212,28 @@ a, a:visited {
   display: block;
 }
 
-/* ========== WALK TEXT / BODY TEXT ========== */
+/* ========== WALK TEXT / BODY TEXT SECTIONS ========== */
 .walk-text {
   margin-top: var(--space-m);
 }
 
 .walk-text p {
   margin-bottom: var(--space-s);
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
+  max-width: 100%;
 }
 
 .walk-text p:last-child {
   margin-bottom: 0;
 }
 
-/* ========== LINKS (blue, underlined) ========== */
+/* ========== BLUE LINKS (INSTAGRAM ETC) ========== */
 .link-blue {
-  color: #0055cc;
+  color: var(--color-link);
   text-decoration: underline;
 }
 
 .link-blue:visited {
-  color: #0055cc;
+  color: var(--color-link);
 }
 
 .link-blue:hover {
@@ -231,28 +242,54 @@ a, a:visited {
 
 /* ========== SITE FOOTER ========== */
 .site-footer {
-  margin-top: auto;
-  padding-top: var(--space-m);
-  border-top: 1px solid var(--color-text);
+  margin-top: var(--space-l);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--color-rule);
 }
 
 .footer-links {
   display: flex;
   justify-content: flex-end;
   gap: var(--space-s);
-  font-size: var(--type-body);
-  font-weight: var(--weight-regular);
-  padding-top: var(--space-xs);
-  padding-bottom: var(--space-xs);
+  font-size: var(--type-small);
+  font-weight: 400;
 }
 
-/* ========== MOBILE ========== */
-@media (max-width: 600px) {
-  .walk-text p {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+  .home {
+    padding: var(--space-s) var(--space-s) var(--space-s);
+  }
+
+  .title {
+    font-size: clamp(42px, 13vw, 62px);
+  }
+
+  .sub {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .page-title {
+    font-size: clamp(42px, 13vw, 62px);
+  }
+
+  .page-subtitle {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .page-caption {
+    font-size: clamp(16px, 4.5vw, 22px);
+  }
+
+  .nav {
+    gap: var(--space-m);
+  }
+
+  .walk-photos {
+    gap: var(--space-s);
+  }
+
+  .footer-links {
+    justify-content: flex-start;
   }
 }
