@@ -11,6 +11,7 @@
   --type-heading: clamp(40px, 4.6vw, 74px);
   --type-body: clamp(15px, 1.2vw, 18px);
   --type-small: clamp(11px, 0.9vw, 13px);
+  --type-sub: clamp(28px, 3.2vw, 52px);
 
   --weight-regular: 400;
   --weight-black: 900;
@@ -30,13 +31,13 @@
 
   --color-bg: #f3f3f3;
   --color-text: #000;
-  --color-link: #1a0dab;
+  --color-link: #0055d4;
   --color-muted: #555;
   --color-rule: #000;
 }
 
 /* ========== BASE ========== */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -62,10 +63,43 @@ a, a:visited {
   text-decoration: none;
 }
 
+/* ========== LINK STYLES (UNDERLINED BLUE) ========== */
+.link-blue,
+.link-blue:visited {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+.link-blue:hover {
+  opacity: 0.7;
+}
+
 /* ========== MAIN CONTAINER ========== */
 .home {
   min-height: 100vh;
   padding: var(--space-l);
+}
+
+/* ========== TOP BAR (SUBPAGES) ========== */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--color-rule);
+  margin-bottom: var(--space-l);
+}
+
+.top-bar a {
+  font-size: var(--type-small);
+  font-weight: var(--weight-black);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.top-bar a:hover {
+  opacity: 0.55;
 }
 
 /* ========== NAV (HOMEPAGE) ========== */
@@ -84,6 +118,14 @@ a, a:visited {
 
 .block:hover {
   opacity: 0.55;
+}
+
+/* ========== HOMEPAGE SEPARATOR LINE ========== */
+.home-rule {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--color-rule);
+  margin: 0;
 }
 
 /* ========== TYPOGRAPHY ========== */
@@ -105,16 +147,35 @@ a, a:visited {
   transform: translateY(-0.10em);
 }
 
-/* ========== STACK ========== */
+.sub--stack {
+  transform: none;
+}
+
+/* ========== PAGE TITLE (SUBPAGES) ========== */
+.page-title {
+  font-size: var(--type-display);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tight);
+  line-height: var(--leading-none);
+  margin: 0;
+}
+
+/* ========== SUBTITLE (walk "gallery anchored tour") ========== */
+.page-subtitle {
+  font-size: var(--type-sub);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--track-tighter);
+  line-height: var(--leading-tight);
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
+}
+
+/* ========== STACK (GALLERY / PHOTO SERIES) ========== */
 .stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-}
-
-.sub--stack {
-  transform: none;
 }
 
 /* ========== STREET BLOCK ========== */
@@ -124,68 +185,21 @@ a, a:visited {
   align-items: flex-start;
 }
 
-/* ========== PAGE (INNER PAGES — INSTITUTIONAL HEADER) ========== */
+/* ========== SUBPAGE CONTAINER ========== */
 .page {
   min-height: 100vh;
   padding: var(--space-l);
 }
 
-/* Back link with rule */
-.back {
-  display: block;
-  font-size: var(--type-small);
-  font-weight: var(--weight-black);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding-bottom: var(--space-xs);
-  border-bottom: 1px solid var(--color-rule);
-  margin-bottom: var(--space-m);
-  text-decoration: none;
-  color: var(--color-text);
-}
-
-.back:hover {
-  opacity: 0.55;
-}
-
-/* Hero header */
-.hero {
-  margin-bottom: var(--space-m);
-}
-
-.hero-title {
-  font-size: var(--type-display);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tight);
-  line-height: var(--leading-none);
-}
-
-.hero-subtitle {
-  font-size: var(--type-heading);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tighter);
-  line-height: var(--leading-tight);
-  display: block;
-}
-
-.hero-caption {
-  font-size: var(--type-heading);
-  font-weight: var(--weight-black);
-  letter-spacing: var(--track-tighter);
-  line-height: var(--leading-tight);
-  color: var(--color-muted);
-  margin-top: 0;
-}
-
-/* ========== WALK PAGE ========== */
+/* ========== WALK PAGE / GALLERY PAGE / PHOTOSERIES PAGE ========== */
 .walk-header {
-  margin-bottom: var(--space-m);
+  margin-bottom: var(--space-l);
 }
 
 .walk-photos {
   display: flex;
   flex-direction: column;
-  gap: var(--space-m);
+  gap: var(--space-l);
 }
 
 .walk-photos img {
@@ -195,24 +209,75 @@ a, a:visited {
 }
 
 .walk-text {
-  margin-top: var(--space-m);
+  margin-top: var(--space-l);
 }
 
 .walk-text p {
-  margin-bottom: var(--space-s);
+  margin-bottom: var(--space-m);
 }
 
 .walk-text p:last-child {
   margin-bottom: 0;
 }
 
-/* ========== LINKS (BLUE / UNDERLINE) ========== */
-.link-blue,
-.link-blue:visited {
-  color: var(--color-link);
-  text-decoration: underline;
+/* ========== PAGE FOOTER (LINE + LINKS) ========== */
+.page-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--color-rule);
 }
 
-.link-blue:hover {
-  opacity: 0.7;
+.page-footer p {
+  margin-bottom: var(--space-xs);
+}
+
+.page-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== MOBILE ADJUSTMENTS ========== */
+@media (max-width: 680px) {
+  .home {
+    padding: var(--space-m);
+  }
+
+  .page {
+    padding: var(--space-m);
+  }
+
+  .title {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .page-title {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .sub {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .page-subtitle {
+    font-size: clamp(20px, 5.5vw, 28px);
+  }
+
+  .nav {
+    gap: var(--space-m);
+  }
+
+  .walk-photos {
+    gap: var(--space-m);
+  }
+
+  .top-bar {
+    margin-bottom: var(--space-m);
+  }
+
+  .walk-header {
+    margin-bottom: var(--space-m);
+  }
+
+  .walk-text {
+    margin-top: var(--space-m);
+  }
 }
