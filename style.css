@@ -23,10 +23,10 @@
   --leading-body: 1.45;
 
   --space-xs: clamp(8px, 1vw, 12px);
-  --space-s: clamp(16px, 2vw, 24px);
-  --space-m: clamp(28px, 4vw, 48px);
-  --space-l: clamp(40px, 6vw, 72px);
-  --space-xl: clamp(56px, 8vw, 96px);
+  --space-s: clamp(12px, 1.4vw, 18px);
+  --space-m: clamp(18px, 2.6vw, 32px);
+  --space-l: clamp(28px, 4vw, 48px);
+  --space-xl: clamp(40px, 5.5vw, 64px);
 
   --color-bg: #f3f3f3;
   --color-text: #000;
@@ -247,6 +247,4 @@ a, a:visited {
     font-size: clamp(28px, 8vw, 40px);
   }
 }
-
-
 
